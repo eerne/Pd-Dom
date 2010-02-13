@@ -1,0 +1,113 @@
+#N canvas 208 77 656 499 10;
+#X declare -path ../ -path ../plugins -path ../includes;
+#X msg 139 38 add test.gui2-osc~;
+#N canvas 352 206 784 485 04.gui2.gop 0;
+#X msg 400 100 lalal;
+#X obj 148 18 hsl 128 15 0 100 0 0 04.gui2.0.level 04.gui2.0.level-r
+0.level 4 7 1 10 -262144 -1 -1 12300 1;
+#X obj 9 18 hsl 128 15 0 127 0 0 04.gui2.0.freq 04.gui2.0.freq-r 0.frequency
+4 7 1 10 -262144 -1 -1 5600 1;
+#X obj 148 36 hsl 128 15 0 100 0 0 04.gui2.1.level 04.gui2.1.level-r
+1.level 4 7 1 10 -262144 -1 -1 10800 1;
+#X obj 9 36 hsl 128 15 0 127 0 0 04.gui2.1.freq 04.gui2.1.freq-r 1.frequency
+4 7 1 10 -262144 -1 -1 3600 1;
+#X obj 148 54 hsl 128 15 0 100 0 0 04.gui2.2.level 04.gui2.2.level-r
+2.level 4 7 1 10 -262144 -1 -1 8744 1;
+#X obj 9 54 hsl 128 15 0 127 0 0 04.gui2.2.freq 04.gui2.2.freq-r 2.frequency
+4 7 1 10 -262144 -1 -1 7600 1;
+#X obj 148 72 hsl 128 15 0 100 0 0 04.gui2.3.level 04.gui2.3.level-r
+3.level 4 7 1 10 -262144 -1 -1 9944 1;
+#X obj 9 72 hsl 128 15 0 127 0 0 04.gui2.3.freq 04.gui2.3.freq-r 3.frequency
+4 7 1 10 -262144 -1 -1 7700 1;
+#X obj 148 90 hsl 128 15 0 100 0 0 04.gui2.4.level 04.gui2.4.level-r
+4.level 4 7 1 10 -262144 -1 -1 12144 1;
+#X obj 9 90 hsl 128 15 0 127 0 0 04.gui2.4.freq 04.gui2.4.freq-r 4.frequency
+4 7 1 10 -262144 -1 -1 5800 1;
+#X obj 148 108 hsl 128 15 0 100 0 0 04.gui2.5.level 04.gui2.5.level-r
+5.level 4 7 1 10 -262144 -1 -1 9144 1;
+#X obj 9 108 hsl 128 15 0 127 0 0 04.gui2.5.freq 04.gui2.5.freq-r 5.frequency
+4 7 1 10 -262144 -1 -1 8600 1;
+#X obj 148 126 hsl 128 15 0 100 0 0 04.gui2.6.level 04.gui2.6.level-r
+6.level 4 7 1 10 -262144 -1 -1 12700 1;
+#X obj 9 126 hsl 128 15 0 127 0 0 04.gui2.6.freq 04.gui2.6.freq-r 6.frequency
+4 7 1 10 -262144 -1 -1 4200 1;
+#X coords 0 -1 1 1 300 400 1 0 0;
+#X restore 330 36 pd 04.gui2.gop;
+#X obj 45 456 declare -path ../ -path ../plugins -path ../includes
+;
+#X obj 58 90 pd-dom 04.gui2;
+#N canvas 40 22 651 595 output~ 0;
+#X obj 105 120 vsl 15 64 0 100 0 0 \$0-volume \$0-volume-r Volume 0
+-10 0 12 -262144 -1 -1 4410 1;
+#X obj 105 210 tgl 15 0 empty empty DSP 19 7 0 12 -262144 -1 -1 0 1
+;
+#X obj 105 191 bng 15 250 50 0 \$0-mute \$0-mute-r Mute 19 7 0 12 -262144
+-1 -1;
+#X obj 410 78 inlet~;
+#X obj 242 382 line~;
+#X obj 395 449 *~;
+#X obj 395 489 dac~;
+#X text 331 78 audio in;
+#X obj 473 78 inlet~;
+#X obj 457 448 *~;
+#X obj 410 329 hip~ 3;
+#X obj 472 329 hip~ 3;
+#X obj 105 279 send pd;
+#X obj 242 342 pack 0 50;
+#X obj 232 175 dbtorms;
+#X obj 233 299 f;
+#X obj 261 240 f 0;
+#X obj 301 240 == 0;
+#X obj 261 270 select 1;
+#X text 313 489 audio out;
+#X obj 232 75 loadbang;
+#X obj 232 105 f 70;
+#X obj 104 409 rmstodb;
+#X msg 104 440 set \$1;
+#X msg 105 249 dsp \$1;
+#X obj 252 145 r \$0-volume;
+#X obj 261 210 r \$0-mute;
+#X obj 104 469 s \$0-volume-r;
+#X obj 14 101 r pd;
+#X obj 14 131 route dsp;
+#X msg 14 161 set \$1;
+#X connect 1 0 24 0;
+#X connect 3 0 10 0;
+#X connect 4 0 9 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 8 0 11 0;
+#X connect 9 0 6 1;
+#X connect 10 0 5 1;
+#X connect 11 0 9 1;
+#X connect 13 0 4 0;
+#X connect 13 0 22 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 0;
+#X connect 16 0 17 0;
+#X connect 16 0 18 0;
+#X connect 17 0 16 1;
+#X connect 18 0 15 0;
+#X connect 18 1 13 0;
+#X connect 20 0 21 0;
+#X connect 21 0 14 0;
+#X connect 22 0 23 0;
+#X connect 23 0 27 0;
+#X connect 24 0 12 0;
+#X connect 25 0 14 0;
+#X connect 26 0 16 0;
+#X connect 28 0 29 0;
+#X connect 29 0 30 0;
+#X connect 30 0 1 0;
+#X coords 0 -1 1 1 55 130 2 100 100;
+#X restore 58 120 pd output~;
+#X msg 73 264 \; pd-04.gui2.gop clear \; pd-04.gui2.gop msg 400 100
+lalal;
+#X msg 177 80 vis \$1;
+#X obj 177 61 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 3;
+#X connect 0 0 3 2;
+#X connect 3 0 4 0;
+#X connect 3 1 4 1;
+#X connect 6 0 3 2;
+#X connect 7 0 6 0;

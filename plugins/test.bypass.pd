@@ -1,0 +1,6 @@
+#N canvas 301 48 333 313 10;
+#X obj 56 94 pdom.r~ \$1 \$2;
+#X obj 56 154 pdom.s~ \$1 \$2;
+#X text 29 29 example/02.latency.pd;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;

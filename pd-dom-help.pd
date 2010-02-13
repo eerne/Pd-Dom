@@ -1,0 +1,141 @@
+#N canvas 363 22 467 587 10;
+#X declare -path ./plugins -path ./includes;
+#N canvas 36 307 749 360 more 0;
+#X obj 33 330 outlet;
+#X text 33 80 add multiple plugins to chain;
+#X msg 103 230 disconnect 0 1 2;
+#X msg 63 150 delete 2 1 0;
+#X msg 281 250 clone 1 3;
+#X text 33 20 this is just version 0.1 and some of the syntax might
+change in 1;
+#X msg 543 100 bang;
+#X obj 543 160 print nodes;
+#X msg 543 210 bang;
+#X obj 543 270 print nodes~;
+#X msg 83 190 reset;
+#X msg 115 293 vis \$1;
+#X obj 115 263 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 63 130 delete many plugin at once (needs to be in reverse order)
+;
+#X obj 543 130 pdom.get rack1.nodes;
+#X obj 543 240 pdom.get rack1.nodes~;
+#X msg 33 100 chain test.random-osc~ test.random-osc~ test.random-osc~
+;
+#X text 129 191 buggy at the moment;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 6 0 14 0;
+#X connect 8 0 15 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 11 0;
+#X connect 14 0 7 0;
+#X connect 15 0 9 0;
+#X connect 16 0 0 0;
+#X restore 289 341 pd more;
+#N canvas 359 228 584 292 setup 0;
+#X obj 32 254 outlet;
+#X obj 32 44 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X msg 32 74 dsp-tree-update-mode \$1;
+#X text 229 54 1 = turn pd dsp off and on (slow on osx);
+#X text 229 34 0 = create and delete a [+~] object (default);
+#X text 229 74 2 = don't update dsp tree;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X restore 289 371 pd setup;
+#X text 77 164 add new plugin to chain;
+#X msg 77 184 add test.random-osc~;
+#X obj 165 555 declare -path ./plugins -path ./includes;
+#X msg 136 254 set \$1 test.random-osc~;
+#X obj 136 234 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X msg 174 323 delete \$1;
+#X obj 174 303 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#N canvas 40 22 651 595 output~ 0;
+#X obj 105 120 vsl 15 64 0 100 0 0 \$0-volume \$0-volume-r Volume 0
+-10 0 12 -262144 -1 -1 4410 1;
+#X obj 105 210 tgl 15 0 empty empty DSP 19 7 0 12 -262144 -1 -1 0 1
+;
+#X obj 105 191 bng 15 250 50 0 \$0-mute \$0-mute-r Mute 19 7 0 12 -262144
+-1 -1;
+#X obj 410 78 inlet~;
+#X obj 242 382 line~;
+#X obj 395 449 *~;
+#X obj 395 489 dac~;
+#X text 331 78 audio in;
+#X obj 473 78 inlet~;
+#X obj 457 448 *~;
+#X obj 410 329 hip~ 3;
+#X obj 472 329 hip~ 3;
+#X obj 105 279 send pd;
+#X obj 242 342 pack 0 50;
+#X obj 232 175 dbtorms;
+#X obj 233 299 f;
+#X obj 261 240 f 0;
+#X obj 301 240 == 0;
+#X obj 261 270 select 1;
+#X text 313 489 audio out;
+#X obj 232 75 loadbang;
+#X obj 232 105 f 70;
+#X obj 104 409 rmstodb;
+#X msg 104 440 set \$1;
+#X msg 105 249 dsp \$1;
+#X obj 252 145 r \$0-volume;
+#X obj 261 210 r \$0-mute;
+#X obj 104 469 s \$0-volume-r;
+#X obj 14 101 r pd;
+#X obj 14 131 route dsp;
+#X msg 14 161 set \$1;
+#X connect 1 0 24 0;
+#X connect 3 0 10 0;
+#X connect 4 0 9 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 8 0 11 0;
+#X connect 9 0 6 1;
+#X connect 10 0 5 1;
+#X connect 11 0 9 1;
+#X connect 13 0 4 0;
+#X connect 13 0 22 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 0;
+#X connect 16 0 17 0;
+#X connect 16 0 18 0;
+#X connect 17 0 16 1;
+#X connect 18 0 15 0;
+#X connect 18 1 13 0;
+#X connect 20 0 21 0;
+#X connect 21 0 14 0;
+#X connect 22 0 23 0;
+#X connect 23 0 27 0;
+#X connect 24 0 12 0;
+#X connect 25 0 14 0;
+#X connect 26 0 16 0;
+#X connect 28 0 29 0;
+#X connect 29 0 30 0;
+#X connect 30 0 1 0;
+#X coords 0 -1 1 1 55 130 2 100 100;
+#X restore 26 440 pd output~;
+#X text 136 214 create plugin at position;
+#X text 173 284 delete plugin at position;
+#X obj 26 399 pd-dom rack1;
+#X text 23 20 Pd-Dom 0.1 - (c) 2009 by Enrique Erne;
+#X text 23 40 Pd-Dom is a wrapper around the unofficial Pd dynamic
+object methods. It is an abstracted layer that simplifies API to dynamically
+chain objects (Pd-abstractions) in a node structure. Trees can be build
+with multiple nested Pd-Dom instances. Objects are given a unique Id
+as \$1 argument and use globally available send~ and receives~. It
+currently is built on vanilla Pd and later optionally on dyn~ with
+the same API. All methods are zero based.;
+#X connect 0 0 12 2;
+#X connect 1 0 12 2;
+#X connect 3 0 12 2;
+#X connect 5 0 12 2;
+#X connect 6 0 5 0;
+#X connect 7 0 12 2;
+#X connect 8 0 7 0;
+#X connect 12 0 9 0;
+#X connect 12 1 9 1;
