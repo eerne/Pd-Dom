@@ -1,18 +1,26 @@
 Pd-Dom
 ======
 
-aka. pure dynamic object model
+aka. pure dynamic object model for **Puredata**
 
-Pd-Dom is a wrapper around the unofficial Pd dynamic object methods. It is an abstracted layer that simplifies API to dynamically chain objects (Pd-abstractions) in a node structure. Trees can be build with multiple nested Pd-Dom instances. Objects are given a unique Id as $1 argument and use globally available send~ and receives~. It currently is built on vanilla Pd and later optionally on dyn~ with the same API. All methods are zero based.
+Pd-Dom is a wrapper around the unofficial Pd dynamic
+patching methods. It simplifies API to create and chain abstractions.
+Tree structures can be build with multiple nested Pd-Dom instances.
+Objects are given a unique Id as \$1 argument and use globally available
+send~ and receives~. There are plans to support [dyn~] as well. All
+methods are zero based.
 
 Read more about [Puredata aka Pd on crca.ucsd.edu/~msp/software.html](http://crca.ucsd.edu/~msp/software.html)
 
 How to use
 ----------
+	[add myRandomSeq, add myInstrument, add myEffect(
+	 |
+	[pd-dom <id>]
+	 |
+	[dac~]
 
-	[pd-dom Foo]
-
-### Messages
+### Methods
 
 	add <plugin> [<arg1> [<arg2> ...]]
 	set <position> <plugin>
@@ -49,6 +57,6 @@ License
 
 Copyright (c) 2009-2010, Enrique Erne
 
-Licensed under the MIT license: [www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
+Licensed under the [MIT license](http://www.opensource.org/licenses/mit-license.php)
 
 **Pd-Dom** is inspired by the [mMm](http://puredata.info/Members/eni/mMm) project. 
