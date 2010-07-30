@@ -122,7 +122,6 @@ change in 1;
 #X text 136 214 create plugin at position;
 #X text 173 284 delete plugin at position;
 #X obj 26 399 pd-dom rack1;
-#X text 23 20 Pd-Dom 0.1 - (c) 2009 by Enrique Erne;
 #X text 23 40 Pd-Dom is a wrapper around the unofficial Pd dynamic
 object methods. It is an abstracted layer that simplifies API to dynamically
 chain objects (Pd-abstractions) in a node structure. Trees can be build
@@ -130,6 +129,7 @@ with multiple nested Pd-Dom instances. Objects are given a unique Id
 as \$1 argument and use globally available send~ and receives~. It
 currently is built on vanilla Pd and later optionally on dyn~ with
 the same API. All methods are zero based.;
+#X text 23 20 Pd-Dom 0.2 - (c) 2009 by Enrique Erne;
 #X connect 0 0 12 2;
 #X connect 1 0 12 2;
 #X connect 3 0 12 2;
