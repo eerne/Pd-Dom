@@ -1,9 +1,0 @@
-#N canvas 301 48 333 313 10;
-#X obj 56 94 pdom.r~ \$1 \$2;
-#X obj 56 154 pdom.s~ \$1 \$2;
-#X text 29 29 example/01.test100.pd;
-#X obj 130 124 sig~ 1;
-#X connect 0 0 1 0;
-#X connect 0 1 1 1;
-#X connect 3 0 1 1;
-#X connect 3 0 1 0;
