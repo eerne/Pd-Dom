@@ -1,5 +1,4 @@
 #N canvas 363 22 467 587 10;
-#X declare -path ./plugins -path ./includes;
 #N canvas 36 307 749 360 more 0;
 #X obj 33 330 outlet;
 #X text 33 80 add multiple plugins to chain;
@@ -47,7 +46,6 @@ change in 1;
 #X restore 289 371 pd setup;
 #X text 77 164 add new plugin to chain;
 #X msg 77 184 add test.random-osc~;
-#X obj 165 555 declare -path ./plugins -path ./includes;
 #X msg 136 254 set \$1 test.random-osc~;
 #X obj 136 234 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
@@ -130,12 +128,12 @@ Tree structures can be build with multiple nested Pd-Dom instances.
 Objects are given a unique Id as \$1 argument and use globally available
 send~ and receives~. There are plans to support [dyn~] as well. All
 methods are zero based.;
-#X connect 0 0 12 2;
-#X connect 1 0 12 2;
-#X connect 3 0 12 2;
-#X connect 5 0 12 2;
-#X connect 6 0 5 0;
-#X connect 7 0 12 2;
-#X connect 8 0 7 0;
-#X connect 12 0 9 0;
-#X connect 12 1 9 1;
+#X connect 0 0 11 2;
+#X connect 1 0 11 2;
+#X connect 3 0 11 2;
+#X connect 4 0 11 2;
+#X connect 5 0 4 0;
+#X connect 6 0 11 2;
+#X connect 7 0 6 0;
+#X connect 11 0 8 0;
+#X connect 11 1 8 1;

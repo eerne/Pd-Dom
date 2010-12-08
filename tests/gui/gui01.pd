@@ -1,8 +1,8 @@
 #N canvas 603 22 528 518 10;
-#X declare -path ../ -path ../plugins -path ../includes;
+#X declare -path ../ -path ../../;
 #N canvas 0 22 450 300 (subpatch) 0;
-#X array 03.gui 50 float 2;
-#X coords 0 127 50 0 200 127 1;
+#X array 03.gui 7 float 2;
+#X coords 0 127 7 0 200 127 1;
 #X restore 188 293 graph;
 #X obj 192 70 loadbang;
 #X obj 192 130 until;
@@ -33,13 +33,11 @@
 #X connect 8 2 7 0;
 #X connect 9 0 5 0;
 #X restore 164 188 pd extend-table;
-#X obj 45 456 declare -path ../ -path ../plugins -path ../includes
-;
 #X obj 58 250 pd-dom 03.gui;
 #N canvas 40 22 651 595 output~ 0;
 #X obj 105 120 vsl 15 64 0 100 0 0 \$0-volume \$0-volume-r Volume 0
--10 0 12 -262144 -1 -1 5210 1;
-#X obj 105 210 tgl 15 0 empty empty DSP 19 7 0 12 -262144 -1 -1 1 1
+-10 0 12 -262144 -1 -1 4410 1;
+#X obj 105 210 tgl 15 0 empty empty DSP 19 7 0 12 -262144 -1 -1 0 1
 ;
 #X obj 105 191 bng 15 250 50 0 \$0-mute \$0-mute-r Mute 19 7 0 12 -262144
 -1 -1;
@@ -104,16 +102,17 @@
 #X text 312 277 frequencies;
 #X msg 324 249 vis \$1;
 #X obj 324 229 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X text 178 35 add an other osc~;
+#X obj 45 456 declare -path ../ -path ../../;
 #X connect 1 0 4 0;
 #X connect 2 0 6 0;
 #X connect 3 0 6 0;
 #X connect 4 0 2 0;
-#X connect 5 0 9 2;
+#X connect 5 0 8 2;
 #X connect 6 0 5 0;
 #X connect 6 1 7 0;
-#X connect 9 0 10 0;
-#X connect 9 1 10 1;
-#X connect 12 0 9 2;
-#X connect 13 0 12 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 11 0 8 2;
+#X connect 12 0 11 0;
