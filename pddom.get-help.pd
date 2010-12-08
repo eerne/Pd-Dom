@@ -5,13 +5,13 @@
 #X obj 33 350 print nodes~;
 #X text 33 140 gets list with all plugins;
 #X text 33 270 gets list with all signal processing plugins;
-#X obj 33 90 pdom.core pdom.get-help;
 #X msg 33 40 chain this-abs-doesnt-exist neither-this-one so-you-get-an-error
 ;
-#X obj 33 190 pdom.get pdom.get-help.nodes;
-#X obj 33 320 pdom.get pdom.get-help.nodes~;
+#X obj 33 90 pddom.core~ pdom.get-help;
+#X obj 33 190 pddom.get pdom.get-help.nodes;
+#X obj 33 320 pddom.get pdom.get-help.nodes~;
 #X connect 0 0 8 0;
 #X connect 2 0 9 0;
-#X connect 7 0 6 1;
+#X connect 6 0 7 1;
 #X connect 8 0 1 0;
 #X connect 9 0 3 0;

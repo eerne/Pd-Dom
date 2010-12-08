@@ -18,21 +18,21 @@ change in 1;
 -1 -1 0;
 #X text 63 130 delete many plugin at once (needs to be in reverse order)
 ;
-#X obj 543 130 pdom.get rack1.nodes;
-#X obj 543 240 pdom.get rack1.nodes~;
 #X msg 33 100 chain test.random-osc~ test.random-osc~ test.random-osc~
 ;
 #X text 129 191 buggy at the moment;
+#X obj 543 130 pddom.get rack1.nodes;
+#X obj 543 240 pddom.get rack1.nodes~;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
-#X connect 6 0 14 0;
-#X connect 8 0 15 0;
+#X connect 6 0 16 0;
+#X connect 8 0 17 0;
 #X connect 10 0 0 0;
 #X connect 11 0 0 0;
 #X connect 12 0 11 0;
-#X connect 14 0 7 0;
-#X connect 15 0 9 0;
-#X connect 16 0 0 0;
+#X connect 14 0 0 0;
+#X connect 16 0 7 0;
+#X connect 17 0 9 0;
 #X restore 289 341 pd more;
 #N canvas 359 228 584 292 setup 0;
 #X obj 32 254 outlet;
