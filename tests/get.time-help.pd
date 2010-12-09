@@ -1,0 +1,18 @@
+#N canvas 624 36 394 308 10;
+#X obj 59 66 get.time;
+#N canvas 111 60 322 311 block-for-1-second 0;
+#X obj 29 28 inlet;
+#X obj 29 108 until;
+#X obj 119 158 realtime;
+#X obj 119 238 select 1;
+#X obj 29 68 t b b;
+#X obj 119 198 >= 1000;
+#X connect 0 0 4 0;
+#X connect 1 0 2 1;
+#X connect 2 0 5 0;
+#X connect 3 0 1 1;
+#X connect 4 0 1 0;
+#X connect 4 1 2 0;
+#X connect 5 0 3 0;
+#X restore 59 126 pd block-for-1-second;
+#X connect 0 0 1 0;

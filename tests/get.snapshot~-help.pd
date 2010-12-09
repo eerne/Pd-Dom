@@ -1,0 +1,6 @@
+#N canvas 0 22 450 300 10;
+#X obj 107 139 get.snapshot~;
+#X obj 107 99 *~ 100;
+#X obj 107 59 osc~ 0.1;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;

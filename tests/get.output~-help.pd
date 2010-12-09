@@ -1,0 +1,5 @@
+#N canvas 0 22 450 300 10;
+#X obj 107 59 osc~ 440;
+#X obj 107 105 get.output~;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
