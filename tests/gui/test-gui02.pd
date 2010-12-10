@@ -2,21 +2,13 @@
 #X declare -path ./ -path ../ -path ../../;
 #X msg 177 80 vis \$1;
 #X obj 177 61 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
--1 1;
+-1 0;
 #X obj 45 456 declare -path ./ -path ../ -path ../../;
 #X msg 139 38 add gui02-osc~;
 #X obj 58 130 get.output~;
 #X obj 58 90 pd-dom gui02;
 #N canvas 352 206 784 485 gui02.gop 0;
 #X msg 400 100 lalal;
-#X obj 148 18 hsl 128 15 0 100 0 0 gui02.0.level gui02.0.level-r 0.level
-4 7 1 10 -262144 -1 -1 12100 1;
-#X obj 9 18 hsl 128 15 0 127 0 0 gui02.0.freq gui02.0.freq-r 0.frequency
-4 7 1 10 -262144 -1 -1 9100 1;
-#X obj 148 36 hsl 128 15 0 100 0 0 gui02.1.level gui02.1.level-r 1.level
-4 7 1 10 -262144 -1 -1 10800 1;
-#X obj 9 36 hsl 128 15 0 127 0 0 gui02.1.freq gui02.1.freq-r 1.frequency
-4 7 1 10 -262144 -1 -1 9093 1;
 #X coords 0 -1 1 1 300 400 1 0 0;
 #X restore 332 36 pd gui02.gop;
 #X msg 73 274 \; pd-gui02.gop clear \; pd-gui02.gop msg 400 100 lalal

@@ -1,6 +1,7 @@
-#N canvas 0 22 450 300 10;
-#X obj 107 139 get.snapshot~;
-#X obj 107 99 *~ 100;
-#X obj 107 59 osc~ 0.1;
+#N canvas 237 35 450 300 10;
+#X obj 34 124 get.snapshot~;
+#X obj 34 94 *~ 100;
+#X obj 34 64 osc~ 0.1;
+#X text 30 25 little snapshot~ gop abstraction;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;

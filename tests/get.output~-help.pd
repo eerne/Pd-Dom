@@ -1,5 +1,6 @@
-#N canvas 0 22 450 300 10;
-#X obj 107 59 osc~ 440;
-#X obj 107 105 get.output~;
+#N canvas 383 36 487 302 10;
+#X obj 31 69 osc~ 440;
+#X obj 31 115 get.output~;
+#X text 30 25 simple dac~ gop abstraction with some extra sugar;
 #X connect 0 0 1 0;
 #X connect 0 0 1 1;

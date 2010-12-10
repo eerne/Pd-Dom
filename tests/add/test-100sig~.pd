@@ -46,5 +46,5 @@ sig1~ sig1~ sig1~ sig1~ sig1~ sig1~ sig1~ sig1~;
 #X connect 5 0 4 0;
 #X connect 6 0 11 2;
 #X connect 7 0 11 2;
-#X connect 10 0 1 0;
+#X connect 10 1 1 0;
 #X connect 11 0 8 0;
