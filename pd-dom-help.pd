@@ -1,5 +1,5 @@
 #N canvas 639 22 467 587 10;
-#X declare -path ./;
+#X declare -path ./ -path tests/add/;
 #N canvas 36 307 749 360 more 0;
 #X obj 33 330 outlet;
 #X text 33 80 add multiple plugins to chain;
@@ -59,19 +59,19 @@ send~ and receives~. There are plans to support [dyn~] as well. All
 methods are zero based.;
 #X msg 234 393 vis \$1;
 #X obj 234 363 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
-#X obj 121 547 declare -path ./;
-#X msg 77 184 add tests/add/random-osc~;
+-1 -1 0;
 #X obj 26 439 tests/get.output~;
-#X msg 136 254 set \$1 tests/add/random-osc~;
+#X msg 77 184 add random-osc~;
+#X msg 136 254 set \$1 random-osc~;
+#X obj 122 547 declare -path ./ -path tests/add/;
 #X connect 0 0 8 2;
 #X connect 1 0 8 2;
-#X connect 3 0 16 0;
+#X connect 3 0 15 0;
 #X connect 4 0 8 2;
 #X connect 5 0 4 0;
-#X connect 8 0 15 0;
-#X connect 8 1 15 1;
+#X connect 8 0 13 0;
+#X connect 8 1 13 1;
 #X connect 11 0 8 2;
 #X connect 12 0 11 0;
 #X connect 14 0 8 2;
-#X connect 16 0 8 2;
+#X connect 15 0 8 2;
