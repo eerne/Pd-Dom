@@ -1,0 +1,16 @@
+#N canvas 595 22 417 444 10;
+#X declare -path ./ -path ../../;
+#X declare -path ../ -path add/;
+#X declare -path ./ -path ../../;
+#X msg 30 27 bang;
+#X obj 80 97 print;
+#X obj 30 67 run-add-sig1~;
+#X obj 170 27 declare -path ../ -path add/;
+#X obj 80 167 print;
+#X obj 30 137 run-dsp1-add-sig1~;
+#X msg 30 107 bang;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
