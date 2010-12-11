@@ -1,5 +1,5 @@
 #N canvas 299 22 488 313 10;
-#X obj 31 76 get.time;
+#X obj 31 96 get.time;
 #N canvas 111 60 322 311 block-for-1-second 0;
 #X obj 29 28 inlet;
 #X obj 29 108 until;
@@ -14,9 +14,11 @@
 #X connect 4 0 1 0;
 #X connect 4 1 2 0;
 #X connect 5 0 3 0;
-#X restore 109 136 pd block-for-1-second;
-#X obj 31 136 print;
+#X restore 109 156 pd block-for-1-second;
+#X obj 31 156 print;
 #X text 30 25 measures how much time in realtime it took to perform
 an action triggered by the right outlet.;
+#X obj 31 66 loadbang;
 #X connect 0 0 2 0;
 #X connect 0 1 1 0;
+#X connect 4 0 0 0;
