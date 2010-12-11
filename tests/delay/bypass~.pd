@@ -3,4 +3,3 @@
 #X obj 56 94 pddom.r~ \$1 \$2;
 #X obj 56 154 pddom.s~ \$1 \$2;
 #X connect 1 0 2 0;
-#X connect 1 1 2 1;

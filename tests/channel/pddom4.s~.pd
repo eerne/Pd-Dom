@@ -1,0 +1,14 @@
+#N canvas 0 22 576 276 10;
+#X obj 24 25 inlet~;
+#X obj 124 25 inlet~;
+#X obj 24 55 s~ \$1.\$2A;
+#X obj 124 55 s~ \$1.\$2B;
+#X obj 424 25 inlet;
+#X obj 224 25 inlet~;
+#X obj 324 25 inlet~;
+#X obj 224 55 s~ \$1.\$2C;
+#X obj 324 55 s~ \$1.\$2D;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 5 0 7 0;
+#X connect 6 0 8 0;

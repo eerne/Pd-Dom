@@ -124,5 +124,5 @@ expect == 1 in \$3 ms;
 #X connect 18 0 14 0;
 #X connect 19 0 18 0;
 #X connect 20 0 3 0;
-#X connect 21 0 20 2;
+#X connect 21 0 20 1;
 #X connect 22 0 2 0;

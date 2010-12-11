@@ -1,9 +1,7 @@
-#N canvas 0 22 358 280 10;
+#N canvas 0 22 307 235 10;
 #N canvas 0 22 450 300 \$1.bin 0;
-#X restore 61 78 pd \$1.bin;
-#X obj 31 38 inlet~;
-#X obj 31 118 outlet~;
-#X msg 31 188 clear;
-#X text 31 168 clear before save;
-#X obj 31 218 s pd-\$1.bin;
-#X connect 3 0 5 0;
+#X restore 31 38 pd \$1.bin;
+#X msg 31 98 clear;
+#X text 31 78 clear before save;
+#X obj 31 128 s pd-\$1.bin;
+#X connect 1 0 3 0;

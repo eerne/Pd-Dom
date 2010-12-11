@@ -122,7 +122,7 @@ ms;
 #X connect 17 1 8 0;
 #X connect 17 2 9 0;
 #X connect 18 0 14 0;
-#X connect 19 0 21 2;
+#X connect 19 0 21 1;
 #X connect 20 0 18 0;
 #X connect 21 0 3 0;
 #X connect 22 0 2 0;

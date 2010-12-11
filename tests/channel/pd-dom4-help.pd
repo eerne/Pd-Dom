@@ -1,5 +1,5 @@
 #N canvas 639 22 521 616 10;
-#X declare -path ./ -path tests/basic/;
+#X declare -path ./ -path ../../;
 #N canvas 36 307 749 360 more 0;
 #X obj 33 330 outlet;
 #X text 33 80 add multiple plugins to chain;
@@ -40,13 +40,14 @@ change in 1;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X restore 310 505 pd setup;
+#X text 77 164 add new plugin to chain;
 #X obj 136 234 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
 #X msg 174 323 delete \$1;
 #X obj 174 303 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
+#X text 136 214 create plugin at position;
 #X text 173 284 delete plugin at position;
-#X obj 26 399 pd-dom rack1;
 #X text 23 40 Pd-Dom is a wrapper around the unofficial Pd dynamic
 patching methods. It simplifies API to create and chain abstractions.
 Tree structures can be build with multiple nested Pd-Dom instances.
@@ -56,23 +57,22 @@ methods are zero based.;
 #X msg 234 403 vis \$1;
 #X obj 234 373 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X obj 26 439 tests/get.output~;
-#X msg 77 184 add random-osc~;
-#X msg 136 254 set \$1 random-osc~;
 #X text 233 354 opens the created abstraction instance;
-#X obj 122 547 declare -path ./ -path tests/basic/;
 #X text 23 20 Pd-Dom 0.3.0wip - (c) 2009-2010 by Enrique Erne \, MIT
 License;
-#X text 136 214 create plugin at position;
-#X text 77 164 add new plugin to chain;
-#X connect 0 0 6 1;
-#X connect 1 0 6 1;
-#X connect 2 0 12 0;
-#X connect 3 0 6 1;
-#X connect 4 0 3 0;
-#X connect 6 0 10 0;
-#X connect 6 0 10 1;
-#X connect 8 0 6 1;
-#X connect 9 0 8 0;
-#X connect 11 0 6 1;
-#X connect 12 0 6 1;
+#X obj 26 439 ../get.output~;
+#X obj 122 547 declare -path ./ -path ../../;
+#X obj 26 399 pd-dom4 rack1;
+#X msg 77 184 add random-osc4~;
+#X msg 135 254 set \$1 random-osc4~;
+#X connect 0 0 15 4;
+#X connect 1 0 15 4;
+#X connect 3 0 17 0;
+#X connect 4 0 15 4;
+#X connect 5 0 4 0;
+#X connect 9 0 15 4;
+#X connect 10 0 9 0;
+#X connect 15 1 13 0;
+#X connect 15 2 13 1;
+#X connect 16 0 15 4;
+#X connect 17 0 15 4;
