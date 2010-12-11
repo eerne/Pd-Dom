@@ -101,7 +101,7 @@ block read the set sig~value.;
 #X obj 130 377 == 1;
 #X msg 30 587 \$1! dsp off "add sig1~" got \$2 expect == 1 in \$3 ms
 ;
-#X obj 130 277 pd-dom set-sig1~;
+#X obj 130 277 pd-dom set-sig1;
 #X connect 1 0 16 0;
 #X connect 1 1 19 0;
 #X connect 3 0 15 0;
