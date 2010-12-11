@@ -42,7 +42,6 @@ Todo
 ----
 
  * fix reset bug
- * fix exmaples
  * code review
  * build dyn~ wrapper
  
