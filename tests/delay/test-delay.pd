@@ -1,4 +1,4 @@
-#N canvas 300 115 909 583 10;
+#N canvas 355 27 909 583 10;
 #X declare -path ./ -path ../ -path ../../;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-impulse 67 float 2;
@@ -84,38 +84,38 @@
 #X connect 10 0 6 0;
 #X restore 367 426 pd delay~ 20;
 #X obj 265 246 t a;
-#X floatatom 407 237 5 0 0 0 - - -;
+#X floatatom 407 237 5 0 64 0 - - -;
 #X msg 305 129 vis 0;
-#X obj 407 267 clip 0 60;
 #X obj 75 149 tabwrite~ \$0-impulse;
 #X msg 265 69 add bypass~;
 #X msg 285 99 set 0 shift~;
 #X obj 45 496 declare -path ./ -path ../ -path ../../;
-#X obj 45 276 pd-dom latency;
-#X obj 116 306 r latency.test2;
-#X obj 96 209 r latency.test2;
-#X obj 85 119 r latency.test1;
-#X obj 45 59 r latency.test1;
-#X msg 407 157 \; pd dsp 1 \; 02.sinesum sinesum 512 1 1 \; latency.test2
+#X obj 407 267 clip 0 64;
+#X obj 45 276 pd-dom shift;
+#X obj 45 59 r shift.test1;
+#X obj 85 119 r shift.test1;
+#X obj 96 209 r shift.test2;
+#X obj 116 306 r shift.test2;
+#X obj 65 386 r shift.test1;
+#X msg 407 297 \; shift.0 shift \$1 \; shift.test1 bang \; shift.test2
 bang;
-#X msg 407 297 \; latency.0 delay \$1 \; latency.test1 bang \; latency.test2
+#X msg 407 157 \; pd dsp 1 \; 02.sinesum sinesum 512 1 1 \; shift.test2
 bang;
-#X obj 65 386 r latency.test1;
 #X connect 5 0 19 1;
 #X connect 7 0 8 1;
-#X connect 8 0 15 0;
+#X connect 8 0 14 0;
 #X connect 8 0 19 0;
 #X connect 9 0 10 1;
 #X connect 11 0 19 2;
-#X connect 12 0 14 0;
+#X connect 12 0 18 0;
 #X connect 13 0 11 0;
-#X connect 14 0 25 0;
+#X connect 15 0 11 0;
 #X connect 16 0 11 0;
-#X connect 17 0 11 0;
+#X connect 18 0 25 0;
 #X connect 19 0 2 0;
 #X connect 19 1 6 0;
-#X connect 20 0 6 0;
-#X connect 21 0 5 0;
-#X connect 22 0 15 0;
-#X connect 23 0 8 0;
-#X connect 26 0 2 0;
+#X connect 20 0 8 0;
+#X connect 21 0 14 0;
+#X connect 22 0 5 0;
+#X connect 23 0 6 0;
+#X connect 24 0 2 0;
