@@ -41,7 +41,6 @@ change in 1;
 #X obj 26 439 tests/get.output~;
 #X msg 77 184 add random-osc~;
 #X msg 136 254 set \$1 random-osc~;
-#X text 233 354 opens the created abstraction instance;
 #X obj 122 547 declare -path ./ -path tests/basic/;
 #X text 23 20 Pd-Dom 0.3.0wip - (c) 2009-2010 by Enrique Erne \, MIT
 License;
@@ -54,6 +53,7 @@ Tree structures can be build with multiple nested Pd-Dom instances.
 Abstractions get a unique Id as \$1 argument and use globally available
 send~ and receives~. There are plans for a [dyn~] wrapper with same
 API.;
+#X text 233 354 open abstraction instance;
 #X connect 0 0 4 1;
 #X connect 1 0 9 0;
 #X connect 2 0 4 1;
