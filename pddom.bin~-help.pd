@@ -1,5 +1,5 @@
 #N canvas 587 42 497 444 10;
-#X obj 32 39 pddom.bin~ binHelp;
 #X msg 32 79 \; pd-binHelp.bin obj 10 10 bang;
 #X text 31 131 this abstraction provides a subpatch pd-\$1.bin so dynamically
 created objects are _not_ saved in the parent abstraction.;
+#X obj 32 39 pddom.bin~ binHelp;
