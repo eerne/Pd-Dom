@@ -1,33 +1,31 @@
 #N canvas 639 22 521 616 10;
 #X declare -path ./ -path tests/basic/;
 #N canvas 36 307 749 360 more 0;
-#X obj 33 330 outlet;
-#X text 33 80 add multiple plugins to chain;
-#X msg 103 230 disconnect 0 1 2;
-#X msg 63 150 delete 2 1 0;
-#X msg 281 250 clone 1 3;
-#X text 33 20 this is just version 0.1 and some of the syntax might
-change in 1;
-#X msg 543 100 bang;
-#X obj 543 160 print nodes;
-#X msg 543 210 bang;
-#X obj 543 270 print nodes~;
-#X msg 83 190 reset;
-#X text 63 130 delete many plugin at once (needs to be in reverse order)
+#X obj 33 300 outlet;
+#X msg 103 200 disconnect 0 1 2;
+#X msg 63 120 delete 2 1 0;
+#X msg 281 220 clone 1 3;
+#X msg 543 70 bang;
+#X obj 543 130 print nodes;
+#X msg 543 180 bang;
+#X obj 543 240 print nodes~;
+#X msg 83 160 reset;
+#X msg 33 70 chain test.random-osc~ test.random-osc~ test.random-osc~
 ;
-#X msg 33 100 chain test.random-osc~ test.random-osc~ test.random-osc~
+#X text 129 161 buggy at the moment;
+#X obj 543 100 pddom.get rack1.nodes;
+#X obj 543 210 pddom.get rack1.nodes~;
+#X text 33 50 add multiple abstractions to tree;
+#X text 63 100 delete many nodes at once (needs to be in reverse order)
 ;
-#X text 129 191 buggy at the moment;
-#X obj 543 130 pddom.get rack1.nodes;
-#X obj 543 240 pddom.get rack1.nodes~;
+#X connect 1 0 0 0;
 #X connect 2 0 0 0;
-#X connect 3 0 0 0;
-#X connect 6 0 14 0;
-#X connect 8 0 15 0;
-#X connect 10 0 0 0;
-#X connect 12 0 0 0;
-#X connect 14 0 7 0;
-#X connect 15 0 9 0;
+#X connect 4 0 11 0;
+#X connect 6 0 12 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 11 0 5 0;
+#X connect 12 0 7 0;
 #X restore 310 475 pd more;
 #X obj 136 234 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
@@ -42,9 +40,6 @@ change in 1;
 #X msg 77 184 add random-osc~;
 #X msg 136 254 set \$1 random-osc~;
 #X obj 122 547 declare -path ./ -path tests/basic/;
-#X text 77 164 add abstraction to chain;
-#X text 136 214 create abstraction at position;
-#X text 173 284 delete abstraction at position;
 #X text 23 40 Pd-Dom is a wrapper around the unofficial Pd dynamic
 patching methods. It simplifies API to create and chain abstractions.
 Tree structures can be build with multiple nested Pd-Dom instances.
@@ -53,6 +48,9 @@ send~ and receives~. There are plans for a [dyn~] wrapper with same
 API.;
 #X text 233 354 open abstraction instance;
 #X text 23 20 Pd-Dom 0.4.0-dev;
+#X text 136 214 create abstraction at node;
+#X text 77 164 add abstraction to tree;
+#X text 173 284 delete abstraction at node;
 #X connect 0 0 4 1;
 #X connect 1 0 9 0;
 #X connect 2 0 4 1;
