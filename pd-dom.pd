@@ -26,7 +26,8 @@
 #X connect 0 0 2 0;
 #X restore 25 100 pd in;
 #X obj 25 130 pddom.core~ \$1;
-#X text 23 20 Pd-Dom 0.3.0 - (c) by Enrique Erne \, MIT License;
+#X text 23 20 Pd-Dom 0.4.0-dev - (c) by Enrique Erne \, MIT License
+;
 #X connect 0 0 6 1;
 #X connect 2 0 5 0;
 #X connect 4 0 3 0;
