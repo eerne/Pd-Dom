@@ -1,4 +1,4 @@
-#N canvas 167 117 408 272 10;
+#N canvas 101 22 408 272 10;
 #X obj 145 60 inlet;
 #X obj 145 200 outlet;
 #X obj 25 60 inlet~;
@@ -82,11 +82,12 @@
 #X obj 31 68 s~ \$1.-1.node;
 #X connect 0 0 2 0;
 #X restore 25 100 pd in;
-#X obj 25 130 pddom.core~ \$1;
 #X text 23 20 Pd-Dom 0.4.0-dev - (c) by Enrique Erne \, MIT License
 ;
-#X connect 0 0 6 1;
+#X obj 25 130 pddom.bin~ \$1;
+#X obj 135 130 pddom.core \$1;
+#X connect 0 0 8 0;
 #X connect 2 0 5 0;
 #X connect 4 0 3 0;
-#X connect 5 0 6 0;
-#X connect 6 0 4 0;
+#X connect 5 0 7 0;
+#X connect 7 0 4 0;
