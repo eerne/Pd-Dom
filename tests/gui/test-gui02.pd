@@ -13,8 +13,8 @@
 #X restore 332 36 pd gui02.gop;
 #X msg 73 274 \; pd-gui02.gop clear \; pd-gui02.gop msg 400 100 lalal
 ;
-#X connect 0 0 5 2;
+#X connect 0 0 5 1;
 #X connect 1 0 0 0;
-#X connect 3 0 5 2;
+#X connect 3 0 5 1;
 #X connect 5 0 4 0;
-#X connect 5 1 4 1;
+#X connect 5 0 4 1;
