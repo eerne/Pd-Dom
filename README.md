@@ -22,8 +22,8 @@ How to use
 
 ### Methods
 
-	add <plugin> [<arg1> [<arg2> ...]]
-	set <position> <plugin>
+	add <abstraction> [<arg1> [<arg2> ...]]
+	set <position> <abstraction>
 	del <position> [<position2> [<position3> ...]]
 
 see subpatch [pd more]

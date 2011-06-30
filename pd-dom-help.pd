@@ -1,4 +1,4 @@
-#N canvas 639 22 521 616 10;
+#N canvas 55 22 521 616 10;
 #X declare -path ./ -path tests/basic/;
 #N canvas 36 307 749 360 more 0;
 #X obj 33 300 outlet;
@@ -46,11 +46,11 @@ Tree structures can be build with multiple nested Pd-Dom instances.
 Abstractions get a unique Id as \$1 argument and use globally available
 send~ and receives~. There are plans for a [dyn~] wrapper with same
 API.;
-#X text 233 354 open abstraction instance;
 #X text 23 20 Pd-Dom 0.4.0-dev;
 #X text 136 214 create abstraction at node;
 #X text 77 164 add abstraction to tree;
 #X text 173 284 delete abstraction at node;
+#X text 233 354 open abstraction at node;
 #X connect 0 0 4 1;
 #X connect 1 0 9 0;
 #X connect 2 0 4 1;
