@@ -24,7 +24,7 @@ How to use
 
 	add <abstraction> [<arg1> [<arg2> ...]]
 	set <position> <abstraction>
-	del <position> [<position2> [<position3> ...]]
+	delete <position> [<position2> [<position3> ...]]
 
 see subpatch [pd more]
 

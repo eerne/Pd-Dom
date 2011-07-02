@@ -1,4 +1,4 @@
-#N canvas 55 22 521 616 10;
+#N canvas 534 22 421 607 10;
 #X declare -path ./ -path tests/basic/;
 #N canvas 36 307 749 360 more 0;
 #X obj 33 300 outlet;
