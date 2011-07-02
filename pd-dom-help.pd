@@ -1,8 +1,7 @@
-#N canvas 534 22 421 607 10;
+#N canvas 547 35 565 641 10;
 #X declare -path ./ -path tests/basic/;
-#N canvas 36 307 749 360 more 0;
+#N canvas 32 439 749 360 more 1;
 #X obj 33 300 outlet;
-#X msg 103 200 disconnect 0 1 2;
 #X msg 63 120 delete 2 1 0;
 #X msg 281 220 clone 1 3;
 #X msg 543 70 bang;
@@ -18,17 +17,26 @@
 #X text 33 50 add multiple abstractions to tree;
 #X text 63 100 delete many nodes at once (needs to be in reverse order)
 ;
+#X obj 431 69 r rack1;
+#X obj 431 159 print verbose;
+#X obj 431 129 spigot;
+#X obj 471 99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 103 200 disconnect 2;
 #X connect 1 0 0 0;
-#X connect 2 0 0 0;
-#X connect 4 0 11 0;
-#X connect 6 0 12 0;
+#X connect 3 0 10 0;
+#X connect 5 0 11 0;
+#X connect 7 0 0 0;
 #X connect 8 0 0 0;
-#X connect 9 0 0 0;
-#X connect 11 0 5 0;
-#X connect 12 0 7 0;
+#X connect 10 0 4 0;
+#X connect 11 0 6 0;
+#X connect 14 0 16 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 1;
+#X connect 18 0 0 0;
 #X restore 310 475 pd more;
 #X obj 136 234 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 1;
 #X msg 174 323 delete \$1;
 #X obj 174 303 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;

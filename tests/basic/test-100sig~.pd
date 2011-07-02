@@ -42,6 +42,7 @@ sig1~ sig1~ sig1~ sig1~ sig1~ sig1~ sig1~ sig1~;
 #X obj 34 224 pd-dom 100sig~;
 #X connect 1 0 2 0;
 #X connect 2 0 7 0;
+#X connect 4 0 11 1;
 #X connect 5 0 4 0;
 #X connect 6 0 11 1;
 #X connect 7 0 11 1;

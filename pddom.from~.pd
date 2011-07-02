@@ -1,0 +1,13 @@
+#N canvas 414 22 329 212 10;
+#X obj 124 25 namecanvas \$1.\$2.vis;
+#X obj 24 25 r \$1;
+#X obj 24 55 route \$2;
+#X obj 24 115 r~ \$1.-1.node;
+#X obj 24 145 outlet~;
+#X msg 137 115 rack1.-1.node;
+#X obj 24 85 route connect;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 6 0 3 0;
+#X connect 6 0 5 0;

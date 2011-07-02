@@ -1,14 +1,14 @@
-#N canvas 301 48 386 391 10;
+#N canvas 783 46 314 348 10;
 #X obj 184 162 osc~;
 #X obj 184 42 loadbang;
 #X obj 184 102 + 57;
 #X obj 184 132 mtof;
 #X obj 184 72 random 12;
-#X obj 56 154 pddom.r~ \$1 \$2;
 #X obj 56 214 pddom.s~ \$1 \$2;
-#X connect 0 0 6 0;
+#X obj 56 134 pddom.from~ \$1 \$2;
+#X connect 0 0 5 0;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;
 #X connect 4 0 2 0;
-#X connect 5 0 6 0;
+#X connect 6 0 5 0;
