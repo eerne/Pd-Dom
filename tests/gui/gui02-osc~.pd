@@ -23,7 +23,7 @@
 #X msg 446 125 \; pd-\$1.gop obj 148 \$3 hsl 128 15 0 100 0 0 \$1.\$2.level
 \$1.\$2.level-r \$2.level 4 7 1 10 -262144 -1 -1 0 1 \; \$1.\$2.level-r
 72;
-#X obj 36 244 pddom.s~ \$1 \$2;
+#X obj 36 244 pddom.to~ \$1 \$2;
 #X obj 36 184 pddom.from~ \$1 \$2;
 #X connect 0 0 8 0;
 #X connect 1 0 6 0;

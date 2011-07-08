@@ -4,7 +4,7 @@
 #X obj 188 178 *~ 0.1;
 #X obj 188 58 f \$2;
 #X obj 188 28 loadbang;
-#X obj 56 214 pddom.s~ \$1 \$2;
+#X obj 56 214 pddom.to~ \$1 \$2;
 #X obj 318 127 get.snapshot~;
 #X obj 56 154 pddom.from~ \$1 \$2;
 #X obj 188 88 tabread~ \$1-table;

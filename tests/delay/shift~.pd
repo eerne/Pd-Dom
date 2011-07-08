@@ -19,7 +19,7 @@
 #X obj 211 239 / 1000;
 #X obj 209 109 loadbang;
 #X obj 179 39 r \$1.\$2;
-#X obj 29 349 pddom.s~ \$1 \$2;
+#X obj 29 349 pddom.to~ \$1 \$2;
 #X obj 179 69 route shift;
 #X obj 209 139 f 0;
 #X obj 29 39 pddom.from~ \$1 \$2;
