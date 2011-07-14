@@ -1,7 +1,0 @@
-#N canvas 371 57 589 236 10;
-#X obj 24 25 r \$1.\$2;
-#X obj 324 25 namecanvas \$1.\$2.vis;
-#X obj 24 95 outlet;
-#X text 114 95 Only signal chaining has been implemented yet. see [pdom.r~]
-;
-#X connect 0 0 2 0;
