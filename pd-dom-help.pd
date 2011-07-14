@@ -69,7 +69,7 @@ methods;
 #X text 12 155 AUTHOR Enrique Erne;
 #X text 12 175 HELP_PATCH_AUTHORS Enrique Erne;
 #X restore 382 547 pd META;
-#X text 23 20 Pd-Dom 0.4.0-dev;
+#X text 23 20 Pd-Dom 0.4.0;
 #X connect 0 0 4 1;
 #X connect 1 0 9 0;
 #X connect 2 0 4 1;

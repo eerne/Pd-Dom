@@ -3,7 +3,7 @@
 #X obj 145 320 outlet;
 #X obj 25 60 inlet~;
 #X obj 25 200 outlet~;
-#N canvas 75 188 426 408 out 1;
+#N canvas 75 188 426 408 out 0;
 #X obj 114 225 outlet~;
 #X obj 24 25 inlet~;
 #X obj 114 185 r~ \$1.-1.node;
@@ -605,8 +605,7 @@
 #X connect 9 0 4 0;
 #X connect 11 0 10 0;
 #X restore 261 222 pd node.disconnect;
-#X text 23 20 Pd-Dom 0.4.0-dev - (c) by Enrique Erne \, MIT License
-;
+#X text 23 20 Pd-Dom 0.4.0 - (c) by Enrique Erne \, MIT License;
 #X connect 0 0 12 0;
 #X connect 2 0 5 0;
 #X connect 4 0 3 0;
