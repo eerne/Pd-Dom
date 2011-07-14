@@ -4,8 +4,8 @@
 #X obj 204 102 + 57;
 #X obj 204 132 mtof;
 #X obj 204 72 random 12;
-#X obj 56 154 pddom4.r~ \$1 \$2;
-#X obj 56 214 pddom4.s~ \$1 \$2;
+#X obj 56 154 pddom4.from~ \$1 \$2;
+#X obj 56 214 pddom4.to~ \$1 \$2;
 #X connect 0 0 6 0;
 #X connect 0 0 6 1;
 #X connect 0 0 6 2;
