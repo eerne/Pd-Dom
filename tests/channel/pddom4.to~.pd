@@ -4,10 +4,11 @@
 #X obj 424 25 inlet;
 #X obj 224 25 inlet~;
 #X obj 324 25 inlet~;
-#X obj 24 55 s~ \$1.\$2.node.A;
-#X obj 124 55 s~ \$1.\$2.node.B;
-#X obj 224 55 s~ \$1.\$2.node.C;
-#X obj 324 55 s~ \$1.\$2.node.D;
+#X obj 24 55 s~ \$1.node.\$2.A;
+#X obj 124 55 s~ \$1.node.\$2.B;
+#X obj 224 55 s~ \$1.node.\$2.C;
+#X obj 324 55 s~ \$1.node.\$2.D;
+#X obj 24 85 s~ \$1.node.\$2;
 #X connect 0 0 5 0;
 #X connect 1 0 6 0;
 #X connect 3 0 7 0;
