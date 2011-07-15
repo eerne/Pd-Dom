@@ -1,5 +1,5 @@
 #N canvas 0 22 450 300 10;
 #X obj 24 25 inlet~;
 #X obj 244 25 inlet;
-#X obj 24 55 s~ \$1.\$2.node;
+#X obj 24 55 s~ \$1.node.\$2;
 #X connect 0 0 2 0;
