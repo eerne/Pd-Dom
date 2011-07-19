@@ -1,4 +1,4 @@
-#N canvas 547 35 565 641 10;
+#N canvas 547 36 565 641 10;
 #X declare -path ./ -path tests/basic/;
 #N canvas 67 292 749 360 more 0;
 #X obj 33 300 outlet;
@@ -36,7 +36,7 @@
 #X connect 18 0 0 0;
 #X restore 310 475 pd more;
 #X obj 136 234 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 3;
 #X msg 174 323 delete \$1;
 #X obj 174 303 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;

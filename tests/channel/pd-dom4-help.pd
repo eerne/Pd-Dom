@@ -27,19 +27,8 @@
 #X connect 13 0 6 0;
 #X connect 14 0 8 0;
 #X restore 310 395 pd more;
-#N canvas 359 228 584 292 setup 0;
-#X obj 32 254 outlet;
-#X obj 32 44 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
--1 0;
-#X msg 32 74 dsp-tree-update-mode \$1;
-#X text 229 54 1 = turn pd dsp off and on (slow on osx);
-#X text 229 34 0 = create and delete a [+~] object (default);
-#X text 229 74 2 = don't update dsp tree;
-#X connect 1 0 2 0;
-#X connect 2 0 0 0;
-#X restore 310 425 pd setup;
 #X obj 136 154 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X msg 174 243 delete \$1;
 #X obj 174 223 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
@@ -56,14 +45,13 @@
 #X text 173 204 delete abstraction at node;
 #X text 233 274 open abstraction at node;
 #X obj 26 319 pd-dom4 rack4;
-#X connect 0 0 16 4;
-#X connect 1 0 16 4;
-#X connect 2 0 10 0;
-#X connect 3 0 16 4;
-#X connect 4 0 3 0;
-#X connect 5 0 16 4;
-#X connect 6 0 5 0;
-#X connect 9 0 16 4;
-#X connect 10 0 16 4;
-#X connect 16 1 7 0;
-#X connect 16 2 7 1;
+#X connect 0 0 15 4;
+#X connect 1 0 9 0;
+#X connect 2 0 15 4;
+#X connect 3 0 2 0;
+#X connect 4 0 15 4;
+#X connect 5 0 4 0;
+#X connect 8 0 15 4;
+#X connect 9 0 15 4;
+#X connect 15 1 6 0;
+#X connect 15 2 6 1;
