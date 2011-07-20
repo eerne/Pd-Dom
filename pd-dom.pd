@@ -31,7 +31,7 @@
 #X connect 1 0 3 0;
 #X connect 3 0 0 0;
 #X restore 295 190 pd vis;
-#N canvas 179 22 735 719 node.connect 1;
+#N canvas 179 22 735 719 node.connect 0;
 #X obj 164 175 list split;
 #N canvas 0 22 343 395 find.previous 0;
 #X obj 24 25 inlet;
@@ -484,8 +484,6 @@
 #X connect 9 0 4 0;
 #X connect 11 0 10 0;
 #X restore 225 230 pd node.disconnect;
-#X text 23 20 Pd-Dom 0.5.0-dev - (c) by Enrique Erne \, MIT License
-;
 #N canvas 610 22 403 265 nodes~ 0;
 #X obj 23 144 list;
 #X obj 23 114 b;
@@ -525,13 +523,14 @@ to. Signal processing objects have to register themself to this list.
 #X connect 0 0 2 0;
 #X restore 25 100 pd node.-1;
 #X obj 145 130 route last connect disconnect vis;
-#X connect 0 0 14 0;
-#X connect 2 0 13 0;
-#X connect 4 0 12 0;
-#X connect 6 0 14 0;
-#X connect 12 0 3 0;
-#X connect 13 0 4 0;
-#X connect 14 1 8 0;
-#X connect 14 2 9 0;
-#X connect 14 3 7 0;
-#X connect 14 4 5 0;
+#X text 23 20 Pd-Dom 0.5.0 - (c) by Enrique Erne \, MIT License;
+#X connect 0 0 13 0;
+#X connect 2 0 12 0;
+#X connect 4 0 11 0;
+#X connect 6 0 13 0;
+#X connect 11 0 3 0;
+#X connect 12 0 4 0;
+#X connect 13 1 8 0;
+#X connect 13 2 9 0;
+#X connect 13 3 7 0;
+#X connect 13 4 5 0;
