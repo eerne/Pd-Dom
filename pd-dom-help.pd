@@ -1,6 +1,6 @@
 #N canvas 547 36 565 641 10;
 #X declare -path ./ -path tests/basic/;
-#N canvas 67 292 749 360 more 1;
+#N canvas 67 292 749 360 more 0;
 #X obj 33 300 outlet;
 #X msg 63 120 delete 2 1 0;
 #X msg 281 220 clone 1 3;
@@ -8,10 +8,8 @@
 #X obj 543 130 print nodes;
 #X msg 543 180 bang;
 #X obj 543 240 print nodes~;
-#X msg 83 160 reset;
 #X msg 33 70 chain test.random-osc~ test.random-osc~ test.random-osc~
 ;
-#X text 129 161 buggy at the moment;
 #X obj 543 100 pddom.get rack1.nodes;
 #X obj 543 210 pddom.get rack1.nodes~;
 #X text 33 50 add multiple abstractions to tree;
@@ -22,24 +20,23 @@
 #X obj 431 129 spigot;
 #X obj 471 99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 103 200 disconnect 2;
+#X msg 83 160 disconnect 2;
 #X connect 1 0 0 0;
-#X connect 3 0 10 0;
-#X connect 5 0 11 0;
+#X connect 3 0 8 0;
+#X connect 5 0 9 0;
 #X connect 7 0 0 0;
-#X connect 8 0 0 0;
-#X connect 10 0 4 0;
-#X connect 11 0 6 0;
-#X connect 14 0 16 0;
-#X connect 16 0 15 0;
-#X connect 17 0 16 1;
-#X connect 18 0 0 0;
-#X restore 310 475 pd more;
+#X connect 8 0 4 0;
+#X connect 9 0 6 0;
+#X connect 12 0 14 0;
+#X connect 14 0 13 0;
+#X connect 15 0 14 1;
+#X connect 16 0 0 0;
+#X restore 283 477 pd more;
 #X obj 136 234 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 6;
+-1 -1 0;
 #X msg 174 323 delete \$1;
 #X obj 174 303 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X obj 26 399 pd-dom rack1;
 #X msg 234 403 vis \$1;
 #X obj 234 373 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
@@ -70,6 +67,7 @@ methods;
 #X text 12 175 HELP_PATCH_AUTHORS Enrique Erne;
 #X restore 382 547 pd META;
 #X text 23 20 Pd-Dom 0.6.0-dev;
+#X msg 283 441 reset;
 #X connect 0 0 4 1;
 #X connect 1 0 9 0;
 #X connect 2 0 4 1;
@@ -80,3 +78,4 @@ methods;
 #X connect 6 0 5 0;
 #X connect 8 0 4 1;
 #X connect 9 0 4 1;
+#X connect 18 0 4 1;
