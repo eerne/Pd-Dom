@@ -272,7 +272,7 @@ receive~ set \$1.node.-1 \; pd-\$1.bin clear \, obj 10 10 sig~ 0;
 #X obj 246 175 list split 1;
 #X obj 24 275 list prepend \$1;
 #X obj 24 65 t a a;
-#N canvas 0 22 346 392 plugin.write 0;
+#N canvas 112 22 346 392 plugin.write 0;
 #X obj 24 25 inlet;
 #X obj 24 305 s;
 #X obj 64 125 list prepend obj 10 10;
@@ -315,8 +315,6 @@ receive~ set \$1.node.-1 \; pd-\$1.bin clear \, obj 10 10 sig~ 0;
 #X connect 7 0 6 1;
 #X restore 56 205 pd list-replace-simple 0;
 #X obj 56 145 pddom.get \$1.nodes;
-#X msg 240 304 \; pd-\$1.bin.\$2 obj 10 10 \$3 \$1 \$2 \; \$1 connect
-\$2 \; pd-\$1.bin.\$2 loadbang bang;
 #X msg 24 305 \; pd-\$1.bin.\$2 obj 10 10 \$3 \$1 \$2 \; pd-\$1.bin.\$2
 loadbang bang;
 #X connect 0 0 8 0;
@@ -326,7 +324,7 @@ loadbang bang;
 #X connect 3 1 6 0;
 #X connect 5 0 3 0;
 #X connect 6 0 10 2;
-#X connect 7 0 13 0;
+#X connect 7 0 12 0;
 #X connect 8 0 7 0;
 #X connect 8 1 2 0;
 #X connect 10 0 4 0;

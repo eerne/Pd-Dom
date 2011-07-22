@@ -270,14 +270,14 @@
 #X text 35 532 node receive from;
 #X obj 332 458 list append;
 #X obj 429 435 list append;
-#X text 557 497 node listen to position;
 #X obj 547 307 list prepend;
+#X text 557 497 register;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 2 0 22 0;
 #X connect 3 0 9 0;
 #X connect 3 1 8 0;
-#X connect 3 2 34 0;
+#X connect 3 2 33 0;
 #X connect 4 0 0 0;
 #X connect 7 0 4 0;
 #X connect 7 1 16 0;
@@ -295,7 +295,7 @@
 #X connect 16 0 0 1;
 #X connect 16 0 31 1;
 #X connect 16 0 32 1;
-#X connect 16 0 34 1;
+#X connect 16 0 33 1;
 #X connect 17 0 18 0;
 #X connect 19 0 20 0;
 #X connect 19 1 21 0;
@@ -314,7 +314,7 @@
 #X connect 29 0 25 0;
 #X connect 31 0 26 0;
 #X connect 32 0 23 0;
-#X connect 34 0 19 0;
+#X connect 33 0 19 0;
 #X restore 145 260 pd node.connect;
 #N canvas 301 58 535 342 node.disconnect 0;
 #X obj 24 25 inlet;
@@ -469,7 +469,7 @@
 #X restore 126 145 pd nodes~.find;
 #X obj 256 175 pddom.get \$1.nodes~;
 #X obj 24 245 s \$1;
-#X msg 24 215 connect \$1;
+#X msg 24 215 register \$1;
 #X connect 0 0 7 0;
 #X connect 1 0 11 0;
 #X connect 2 0 8 0;
@@ -506,7 +506,7 @@ to. Signal processing objects have to register themself to this list.
 #X obj 24 25 inlet~;
 #X msg 153 132 set \$1;
 #X obj 114 195 r~ \$1.node.-1;
-#X msg 137 165 rack1.node.-1;
+#X msg 137 165 rack1.node.1;
 #X obj 114 25 r \$1.last;
 #X msg 134 66 receive~ set rack1.node.-1;
 #X obj 114 105 route receive~;
@@ -522,16 +522,16 @@ to. Signal processing objects have to register themself to this list.
 #X obj 31 68 s~ \$1.node.-1;
 #X connect 0 0 2 0;
 #X restore 25 100 pd node.-1;
-#X obj 145 130 route last connect disconnect vis;
 #X text 23 20 Pd-Dom 0.6.0-dev - (c) by Enrique Erne \, MIT License
 ;
-#X connect 0 0 13 0;
+#X obj 145 130 route register disconnect vis;
+#X connect 0 0 14 0;
 #X connect 2 0 12 0;
 #X connect 4 0 11 0;
-#X connect 6 0 13 0;
+#X connect 6 0 14 0;
 #X connect 11 0 3 0;
 #X connect 12 0 4 0;
-#X connect 13 1 8 0;
-#X connect 13 2 9 0;
-#X connect 13 3 7 0;
-#X connect 13 4 5 0;
+#X connect 14 0 8 0;
+#X connect 14 1 9 0;
+#X connect 14 2 7 0;
+#X connect 14 3 5 0;
