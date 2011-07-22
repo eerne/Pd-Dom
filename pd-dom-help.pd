@@ -1,60 +1,62 @@
-#N canvas 547 36 565 641 10;
+#N canvas 547 36 565 703 10;
 #X declare -path ./ -path tests/basic/;
-#N canvas 67 292 749 360 more 0;
-#X obj 33 300 outlet;
-#X msg 63 120 delete 2 1 0;
-#X msg 281 220 clone 1 3;
-#X msg 543 70 bang;
-#X obj 543 130 print nodes;
-#X msg 543 180 bang;
-#X obj 543 240 print nodes~;
-#X msg 33 70 chain test.random-osc~ test.random-osc~ test.random-osc~
-;
-#X obj 543 100 pddom.get rack1.nodes;
-#X obj 543 210 pddom.get rack1.nodes~;
-#X text 33 50 add multiple abstractions to tree;
-#X text 63 100 delete many nodes at once (needs to be in reverse order)
-;
-#X obj 431 69 r rack1;
-#X obj 431 159 print verbose;
-#X obj 431 129 spigot;
-#X obj 471 99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 330 22 625 713 more 1;
+#X obj 33 520 outlet;
+#X msg 301 460 clone 1 3;
+#X msg 231 49 bang;
+#X obj 231 109 print nodes;
+#X msg 233 160 bang;
+#X obj 233 220 print nodes~;
+#X obj 231 79 pddom.get rack1.nodes;
+#X obj 233 190 pddom.get rack1.nodes~;
+#X obj 41 49 r rack1;
+#X obj 41 109 print verbose;
+#X obj 41 79 spigot;
+#X obj 111 49 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 83 160 disconnect 2;
-#X connect 1 0 0 0;
-#X connect 3 0 8 0;
-#X connect 5 0 9 0;
-#X connect 7 0 0 0;
-#X connect 8 0 4 0;
-#X connect 9 0 6 0;
-#X connect 12 0 14 0;
-#X connect 14 0 13 0;
-#X connect 15 0 14 1;
+#X msg 113 450 disconnect 2;
+#X msg 103 420 disconnect 0 \, disconnect 1 \, disconnect 2 \, delete
+0 1 2;
+#X msg 43 300 delete 2 1 0;
+#X msg 93 390 disconnect 2 1 0;
+#X msg 53 330 delete 0 1 2;
+#X text 153 300 delete many nodes at once;
+#X msg 133 480 connect 2;
+#X connect 2 0 6 0;
+#X connect 4 0 7 0;
+#X connect 6 0 3 0;
+#X connect 7 0 5 0;
+#X connect 8 0 10 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 1;
+#X connect 12 0 0 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 0 0;
 #X connect 16 0 0 0;
-#X restore 283 477 pd more;
-#X obj 136 234 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X msg 174 323 delete \$1;
-#X obj 174 303 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+#X connect 18 0 0 0;
+#X restore 173 623 pd more;
+#X obj 176 270 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 6;
+#X msg 174 379 delete \$1;
+#X obj 174 359 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 6;
 #X obj 26 399 pd-dom rack1;
-#X msg 234 403 vis \$1;
-#X obj 234 373 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+#X msg 174 579 vis \$1;
+#X obj 174 549 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
 #X obj 26 439 tests/get.output~;
-#X msg 77 184 add random-osc~;
-#X msg 136 254 set \$1 random-osc~;
-#X obj 122 547 declare -path ./ -path tests/basic/;
+#X msg 177 170 add random-osc~;
+#X msg 176 290 set \$1 random-osc~;
+#X obj 177 20 declare -path ./ -path tests/basic/;
 #X text 23 40 Pd-Dom is a wrapper around the unofficial Pd dynamic
 patching methods. It simplifies API to create and chain abstractions.
 Tree structures can be build with multiple nested Pd-Dom instances.
 Abstractions get a unique Id as \$1 argument and use globally available
 send~ and receives~. There are plans for a [dyn~] wrapper with same
 API.;
-#X text 136 214 create abstraction at node;
-#X text 77 164 add abstraction to tree;
-#X text 173 284 delete abstraction at node;
-#X text 233 354 open abstraction at node;
+#X text 173 340 delete abstraction at node;
+#X text 173 530 open abstraction at node;
 #N canvas 460 150 494 396 META 0;
 #X text 12 5 KEYWORDS signal pd-dom;
 #X text 12 25 LICENSE MIT;
@@ -65,9 +67,13 @@ methods;
 #X text 12 135 OUTLET_0 signal;
 #X text 12 155 AUTHOR Enrique Erne;
 #X text 12 175 HELP_PATCH_AUTHORS Enrique Erne;
-#X restore 382 547 pd META;
+#X restore 437 20 pd META;
 #X text 23 20 Pd-Dom 0.6.0-dev;
-#X msg 283 441 reset;
+#X msg 174 439 reset;
+#X msg 177 200 chain random-osc~ random-osc~ random-osc~;
+#X text 177 250 update node;
+#X text 177 150 create nodes with abstractions;
+#X msg 174 409 delete 0 1 2;
 #X connect 0 0 4 1;
 #X connect 1 0 9 0;
 #X connect 2 0 4 1;
@@ -78,4 +84,6 @@ methods;
 #X connect 6 0 5 0;
 #X connect 8 0 4 1;
 #X connect 9 0 4 1;
-#X connect 18 0 4 1;
+#X connect 16 0 4 1;
+#X connect 17 0 4 1;
+#X connect 20 0 4 1;
