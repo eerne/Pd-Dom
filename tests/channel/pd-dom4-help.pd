@@ -28,13 +28,13 @@
 #X connect 14 0 8 0;
 #X restore 310 395 pd more;
 #X obj 136 154 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 5;
 #X msg 174 243 delete \$1;
 #X obj 174 223 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 7;
 #X msg 234 323 vis \$1;
 #X obj 234 293 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 2;
 #X obj 26 359 ../get.output~;
 #X obj 122 467 declare -path ./ -path ../../;
 #X msg 77 104 add random-osc4~;
@@ -53,5 +53,5 @@
 #X connect 5 0 4 0;
 #X connect 8 0 15 4;
 #X connect 9 0 15 4;
-#X connect 15 1 6 0;
-#X connect 15 2 6 1;
+#X connect 15 0 6 0;
+#X connect 15 3 6 1;
