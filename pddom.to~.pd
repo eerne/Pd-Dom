@@ -10,6 +10,10 @@
 #X obj 314 105 symbol;
 #X obj 384 105 symbol;
 #X obj 244 105 s \$1.\$2;
+#X msg 314 195 set \$1;
+#X msg 314 225;
+#X msg 384 195 set \$1;
+#X msg 384 225;
 #X connect 0 0 2 0;
 #X connect 1 0 7 0;
 #X connect 3 0 8 0;
@@ -19,4 +23,8 @@
 #X connect 7 1 5 0;
 #X connect 7 2 10 0;
 #X connect 8 0 4 1;
+#X connect 8 0 11 0;
 #X connect 9 0 5 1;
+#X connect 9 0 13 0;
+#X connect 11 0 12 0;
+#X connect 13 0 14 0;
