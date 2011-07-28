@@ -1,6 +1,6 @@
 #N canvas 123 22 746 533 10;
 #X obj 53 34 inlet;
-#N canvas 336 22 755 561 node.new 0;
+#N canvas 336 22 635 579 node.new 1;
 #X obj 24 25 inlet;
 #X obj 254 325 t a a;
 #X obj 253 415 pack f f;
@@ -129,8 +129,8 @@ menuclose \, obj 10 10 inlet~ \, obj 10 100 outlet~ \, obj 50 50 pd
 #N canvas 893 22 317 214 reset 0;
 #X obj 24 25 inlet;
 #X obj 24 65 list append \$1;
-#X msg 24 95 \; \$1.nodes.set bang \; \$1.nodes~.set bang \; \$1.last
-receive~ set \$1.node.-1 \; pd-\$1.bin clear \, obj 10 10 sig~ 0;
+#X msg 24 95 \; \$1.nodes.set bang \; \$1.last receive~ set \$1.node.-1
+\; pd-\$1.bin clear \, obj 10 10 sig~ 0;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 606 304 pd reset;
