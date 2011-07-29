@@ -1,8 +1,8 @@
-#N canvas 547 36 565 703 10;
+#N canvas 339 22 518 667 10;
 #X declare -path ./ -path tests/basic/;
-#N canvas 330 22 555 610 more 0;
-#X obj 33 520 outlet;
-#X msg 301 460 clone 1 3;
+#N canvas 770 22 427 507 more 1;
+#X obj 33 430 outlet;
+#X msg 301 370 clone 1 3;
 #X msg 231 49 bang;
 #X obj 231 109 print nodes;
 #X msg 233 160 bang;
@@ -12,16 +12,13 @@
 #X obj 41 49 r rack1;
 #X obj 41 109 print verbose;
 #X obj 41 79 spigot;
-#X obj 111 49 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 111 49 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X msg 113 450 disconnect 2;
-#X msg 103 420 disconnect 0 \, disconnect 1 \, disconnect 2 \, delete
-0 1 2;
+#X msg 113 360 disconnect 2;
 #X msg 43 300 delete 2 1 0;
-#X msg 93 390 disconnect 2 1 0;
 #X msg 53 330 delete 0 1 2;
 #X text 153 300 delete many nodes at once;
-#X msg 133 480 connect 2;
+#X msg 133 390 connect 2;
 #X connect 2 0 6 0;
 #X connect 4 0 7 0;
 #X connect 6 0 3 0;
@@ -32,15 +29,13 @@
 #X connect 12 0 0 0;
 #X connect 13 0 0 0;
 #X connect 14 0 0 0;
-#X connect 15 0 0 0;
 #X connect 16 0 0 0;
-#X connect 18 0 0 0;
 #X restore 173 613 pd more;
 #X obj 176 290 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 3;
 #X msg 174 399 delete \$1;
 #X obj 174 379 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 1;
 #X obj 26 419 pd-dom rack1;
 #X msg 174 569 vis \$1;
 #X obj 174 539 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
