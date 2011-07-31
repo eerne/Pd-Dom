@@ -1,4 +1,4 @@
-#N canvas 205 22 758 551 10;
+#N canvas 179 22 758 551 10;
 #X declare -path ./ -path tests/basic/;
 #N canvas 770 22 427 507 more 0;
 #X obj 33 430 outlet;
@@ -30,14 +30,14 @@
 #X connect 13 0 0 0;
 #X connect 14 0 0 0;
 #X connect 16 0 0 0;
-#X restore 496 264 pd more;
+#X restore 496 284 pd more;
 #X obj 176 280 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
 #X msg 174 439 delete \$1;
 #X obj 174 389 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
 #X obj 26 339 pd-dom rack1;
-#X msg 477 220 vis \$1;
+#X msg 477 240 vis \$1;
 #X obj 477 190 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
 #X obj 26 379 tests/get.output~;
@@ -71,8 +71,9 @@ methods;
 #X msg 174 469 delete 0 1 2;
 #X floatatom 176 305 5 0 0 0 - - -;
 #X floatatom 174 414 5 0 0 0 - - -;
-#X obj 476 304 s rack1;
-#X text 476 334 all methods can be sent directly to <id>;
+#X obj 476 324 s rack1;
+#X text 476 354 all methods can be sent directly to <id>;
+#X floatatom 477 215 5 0 0 0 - - -;
 #X connect 0 0 23 0;
 #X connect 1 0 21 0;
 #X connect 2 0 4 1;
@@ -80,7 +81,7 @@ methods;
 #X connect 4 0 7 0;
 #X connect 4 0 7 1;
 #X connect 5 0 23 0;
-#X connect 6 0 5 0;
+#X connect 6 0 25 0;
 #X connect 8 0 4 1;
 #X connect 9 0 4 1;
 #X connect 16 0 4 1;
@@ -88,3 +89,4 @@ methods;
 #X connect 20 0 4 1;
 #X connect 21 0 9 0;
 #X connect 22 0 2 0;
+#X connect 25 0 5 0;
