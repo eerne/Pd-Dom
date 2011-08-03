@@ -1,4 +1,4 @@
-#N canvas 603 22 528 518 10;
+#N canvas 489 22 528 518 10;
 #X declare -path ./ -path ../ -path ../../;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array gui01-table 7 float 2;
@@ -9,7 +9,7 @@
 #X msg 132 40 bang;
 #X obj 192 100 f 7;
 #X obj 132 158 t b b;
-#N canvas 0 22 549 349 extend-table 1;
+#N canvas 0 22 549 349 extend-table 0;
 #X obj 104 73 f;
 #X obj 104 33 inlet;
 #X obj 144 73 + 1;
@@ -34,7 +34,7 @@
 #X restore 164 188 pd extend-table;
 #X msg 324 249 vis \$1;
 #X obj 324 229 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X text 178 35 add an other osc~;
 #X obj 45 456 declare -path ./ -path ../ -path ../../;
 #X msg 132 218 add parameter-osc~;

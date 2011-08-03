@@ -1,44 +1,43 @@
-#N canvas 578 22 521 616 10;
+#N canvas 578 22 447 540 10;
 #X declare -path ./ -path ../../;
-#N canvas 36 307 749 360 more 1;
+#N canvas 36 307 749 324 more 0;
 #X obj 33 200 outlet;
 #X text 33 30 add multiple plugins to chain;
 #X msg 63 100 delete 2 1 0;
-#X msg 543 50 bang;
-#X obj 543 110 print nodes;
-#X msg 543 160 bang;
-#X obj 543 220 print nodes~;
-#X text 63 80 delete many plugin at once (needs to be in reverse order)
-;
-#X obj 543 80 pddom.get rack4.nodes;
-#X obj 543 190 pddom.get rack4.nodes~;
+#X msg 513 50 bang;
+#X obj 513 110 print nodes;
+#X msg 513 160 bang;
+#X obj 513 220 print nodes~;
+#X obj 513 80 pddom.get rack4.nodes;
+#X obj 513 190 pddom.get rack4.nodes~;
 #X msg 33 50 chain random-osc4~ random-osc4~ random-osc4~;
+#X text 63 80 delete many plugin at once;
 #X connect 2 0 0 0;
-#X connect 3 0 8 0;
-#X connect 5 0 9 0;
-#X connect 8 0 4 0;
-#X connect 9 0 6 0;
-#X connect 10 0 0 0;
-#X restore 234 395 pd more;
-#X obj 136 154 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+#X connect 3 0 7 0;
+#X connect 5 0 8 0;
+#X connect 7 0 4 0;
+#X connect 8 0 6 0;
+#X connect 9 0 0 0;
+#X restore 234 385 pd more;
+#X obj 136 144 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X msg 174 243 delete \$1;
-#X obj 174 223 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+#X msg 174 233 delete \$1;
+#X obj 174 213 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X msg 234 323 vis \$1;
-#X obj 234 293 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+#X msg 234 313 vis \$1;
+#X obj 234 283 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X obj 26 359 ../get.output~;
-#X obj 122 467 declare -path ./ -path ../../;
-#X msg 77 104 add random-osc4~;
-#X msg 135 174 set \$1 random-osc4~;
+#X obj 26 349 ../get.output~;
+#X obj 122 457 declare -path ./ -path ../../;
+#X msg 77 94 add random-osc4~;
+#X msg 135 164 set \$1 random-osc4~;
 #X text 23 20 Example with 4 channels;
-#X text 77 84 add new abstraction to tree;
-#X text 136 134 create abstraction at position;
-#X text 173 204 delete abstraction at node;
-#X text 233 274 open abstraction at node;
-#X obj 26 319 pd-dom4 rack4;
-#X msg 234 352 reset;
+#X text 77 74 add new abstraction to tree;
+#X text 136 124 create abstraction at position;
+#X text 173 194 delete abstraction at node;
+#X text 233 264 open abstraction at node;
+#X obj 26 309 pd-dom4 rack4;
+#X msg 234 342 reset;
 #X connect 0 0 15 4;
 #X connect 1 0 9 0;
 #X connect 2 0 15 4;

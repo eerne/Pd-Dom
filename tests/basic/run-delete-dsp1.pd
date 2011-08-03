@@ -100,8 +100,8 @@ block read the set sig~value.;
 #X msg 250 237 set 0 sig1~ \, set 1 sig1~ \, delete 0;
 #X msg 152 119 \; pd dsp 1;
 #X obj 130 277 pd-dom delete-set-sig1-dsp1;
-#X msg 30 587 \$1: set some sig1 then "delete 0" (DSP on) got \$2 expect
-== 1 in \$3 ms;
+#X msg 30 587 \$1: set 2 abstractions (sig1~) then delete the first
+(DSP on). got \$2 expect == 1 in \$3 ms;
 #X connect 1 0 15 0;
 #X connect 1 1 19 0;
 #X connect 3 0 14 0;

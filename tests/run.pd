@@ -8,6 +8,7 @@
 #X declare -path ../ -path basic/ -path delay/;
 #X declare -path ./ -path ../../;
 #X declare -path ./ -path ../../;
+#X declare -path ./ -path ../../;
 #X msg 30 27 bang;
 #X obj 80 97 print;
 #X obj 80 177 print;
@@ -33,6 +34,9 @@
 #X msg 210 227 bang;
 #X obj 210 257 run-delete2;
 #X obj 260 287 print;
+#X msg 210 297 bang;
+#X obj 260 357 print;
+#X obj 210 327 run-delete-outside;
 #X connect 0 0 14 0;
 #X connect 3 0 15 0;
 #X connect 5 0 16 0;
@@ -55,4 +59,7 @@
 #X connect 21 0 19 0;
 #X connect 22 0 23 0;
 #X connect 23 0 24 0;
-#X connect 23 0 21 0;
+#X connect 23 0 25 0;
+#X connect 25 0 27 0;
+#X connect 27 0 26 0;
+#X connect 27 0 21 0;

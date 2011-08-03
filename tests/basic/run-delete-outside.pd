@@ -99,9 +99,9 @@ block read the set sig~value.;
 #X restore 130 407 pd passed?;
 #X obj 130 377 == 1;
 #X msg 250 237 set 0 sig1~ \, delete 9;
-#X obj 130 277 pd-dom delete-set-outside;
-#X msg 30 587 \$1: set sig1 then "delete 9" (DSP off) got \$2 expect
-== 1 in \$3 ms;
+#X obj 130 277 pd-dom delete-ouside;
+#X msg 30 587 \$1: set abstraction sig1~. then delete non existing
+node at position 9 got \$2 expect == 1 in \$3 ms;
 #X connect 1 0 16 0;
 #X connect 1 1 20 0;
 #X connect 3 0 15 0;

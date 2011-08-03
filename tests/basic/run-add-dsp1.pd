@@ -100,8 +100,8 @@ block read the set sig~value.;
 #X obj 130 377 >= 1;
 #X msg 152 119 \; pd dsp 1;
 #X obj 130 277 pd-dom add-sig1-dsp1;
-#X msg 30 587 \$1: "add sig1~" (DSP on) got \$2 expect >= 1 in \$3
-ms;
+#X msg 30 587 \$1: add abstraction sig1~ (DSP on). got \$2 expect >=
+1 in \$3 ms;
 #X connect 0 0 21 1;
 #X connect 2 0 16 0;
 #X connect 2 1 0 0;

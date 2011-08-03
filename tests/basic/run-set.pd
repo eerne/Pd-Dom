@@ -1,4 +1,4 @@
-#N canvas 261 22 513 670 10;
+#N canvas 178 22 513 670 10;
 #X declare -path ./ -path ../../;
 #X obj 170 27 declare -path ./ -path ../../;
 #X obj 30 127 ../get.time;
@@ -100,8 +100,8 @@ block read the set sig~value.;
 #X msg 250 237 set 0 sig1~;
 #X obj 130 377 == 1;
 #X obj 130 277 pd-dom set-sig1;
-#X msg 30 587 \$1: "set 0 sig1~" (DSP off) got \$2 expect == 1 in \$3
-ms;
+#X msg 30 587 \$1: set abstraction sig1~ at position 0 (DSP off). got
+\$2 expect == 1 in \$3 ms;
 #X connect 1 0 16 0;
 #X connect 1 1 19 0;
 #X connect 3 0 15 0;
