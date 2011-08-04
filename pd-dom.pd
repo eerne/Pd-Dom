@@ -209,7 +209,7 @@
 #X obj 114 195 outlet~;
 #X obj 24 25 inlet~;
 #X obj 114 165 r~ \$1.node.-1;
-#X msg 137 135 rack1.node.4;
+#X msg 137 135 rack1.node.0;
 #X obj 114 25 r \$1.last;
 #X msg 134 66 receive~ set rack1.node.-1;
 #X obj 114 105 route receive~;
@@ -466,7 +466,7 @@
 #X connect 4 0 1 0;
 #X restore 438 179 pd extend;
 #X obj 145 130 route register connect disconnect node~ vis;
-#N canvas 610 22 608 548 node~ 0;
+#N canvas 558 105 608 548 node~ 0;
 #X obj 23 424 list;
 #X obj 23 394 b;
 #X obj 23 364 r \$1.nodes~.get;
