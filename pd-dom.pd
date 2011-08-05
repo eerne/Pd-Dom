@@ -34,20 +34,21 @@
 #X obj 114 195 outlet~;
 #X obj 24 25 inlet~;
 #X obj 114 165 r~ \$1.node.-1;
-#X msg 137 135 rack1.node.4;
 #X obj 114 25 r \$1.last;
 #X msg 134 66 receive~ set rack1.node.-1;
 #X obj 114 105 route receive~;
+#X msg 137 135 rack1.node.4;
 #X connect 2 0 0 0;
-#X connect 4 0 6 0;
+#X connect 3 0 5 0;
+#X connect 4 0 5 0;
 #X connect 5 0 6 0;
-#X connect 6 0 3 0;
-#X connect 6 0 2 0;
+#X connect 5 0 2 0;
 #X restore 25 170 pd node.last;
-#N canvas 134 271 450 300 node.-1 0;
+#N canvas 134 271 450 300 node.-1 1;
 #X obj 31 38 inlet~;
 #X obj 31 108 outlet~;
 #X obj 31 68 s~ \$1.node.-1;
+#X obj 161 38 r \$1.-1;
 #X connect 0 0 2 0;
 #X restore 25 110 pd node.-1;
 #X text 23 20 Pd-Dom 0.6.0-dev - (c) by Enrique Erne \, MIT License
@@ -166,7 +167,8 @@ to. Signal processing objects have to register themself to this list.
 #X obj 87 173 s \$1;
 #X obj 87 113 route last;
 #X msg 87 143 node~ replace \$1 \$2;
-#X msg 24 255 \; \$1.\$2 receive~ set \$1.node.\$3;
+#X msg 24 255 \; \$1.\$2 receive~ set \$1.node.\$3 \; \$1.\$3 send
+symbol \$1.\$2;
 #X connect 0 0 2 0;
 #X connect 1 0 6 0;
 #X connect 2 0 1 0;

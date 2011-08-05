@@ -5,13 +5,11 @@
 #X obj 164 165 s;
 #X obj 314 25 r \$1.\$2;
 #X obj 314 65 route send;
-#X obj 314 95 symbol;
-#X msg 314 165;
 #X msg 314 135 set \$1;
+#X msg 314 165;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 4 0 5 0;
+#X connect 5 0 3 1;
 #X connect 5 0 6 0;
-#X connect 6 0 3 1;
-#X connect 6 0 8 0;
-#X connect 8 0 7 0;
+#X connect 6 0 7 0;
