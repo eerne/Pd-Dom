@@ -5,10 +5,10 @@
 #X declare -path ./ -path ../../;
 #X declare -path ./ -path ../../;
 #X declare -path ./ -path ../../;
+#X declare -path ./ -path ../../;
+#X declare -path ./ -path ../../;
+#X declare -path ./ -path ../../;
 #X declare -path ../ -path basic/ -path delay/;
-#X declare -path ./ -path ../../;
-#X declare -path ./ -path ../../;
-#X declare -path ./ -path ../../;
 #X msg 30 27 bang;
 #X obj 80 97 print;
 #X obj 80 177 print;
@@ -27,7 +27,6 @@
 #X obj 30 147 run-add-dsp1;
 #X obj 30 227 run-set;
 #X obj 30 307 run-set-dsp1;
-#X obj 170 27 declare -path ../ -path basic/ -path delay/;
 #X obj 350 97 run-shift;
 #X obj 390 127 print;
 #X msg 350 67 bang;
@@ -37,6 +36,7 @@
 #X msg 210 297 bang;
 #X obj 260 357 print;
 #X obj 210 327 run-delete-outside;
+#X obj 170 27 declare -path ../ -path basic/ -path delay/;
 #X connect 0 0 14 0;
 #X connect 3 0 15 0;
 #X connect 5 0 16 0;
@@ -46,7 +46,7 @@
 #X connect 12 0 8 0;
 #X connect 12 0 11 0;
 #X connect 13 0 10 0;
-#X connect 13 0 22 0;
+#X connect 13 0 21 0;
 #X connect 14 0 1 0;
 #X connect 14 0 3 0;
 #X connect 15 0 2 0;
@@ -55,11 +55,11 @@
 #X connect 16 0 7 0;
 #X connect 17 0 6 0;
 #X connect 17 0 9 0;
-#X connect 19 0 20 0;
-#X connect 21 0 19 0;
+#X connect 18 0 19 0;
+#X connect 20 0 18 0;
+#X connect 21 0 22 0;
 #X connect 22 0 23 0;
-#X connect 23 0 24 0;
-#X connect 23 0 25 0;
-#X connect 25 0 27 0;
-#X connect 27 0 26 0;
-#X connect 27 0 21 0;
+#X connect 22 0 24 0;
+#X connect 24 0 26 0;
+#X connect 26 0 25 0;
+#X connect 26 0 20 0;

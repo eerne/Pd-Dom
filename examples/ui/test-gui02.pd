@@ -1,11 +1,9 @@
 #N canvas 463 56 656 499 10;
-#X declare -path ./ -path ../ -path ../../;
+#X declare -path ./ -path ../../;
 #X msg 177 80 vis \$1;
 #X obj 177 61 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
 -1 0;
-#X obj 45 456 declare -path ./ -path ../ -path ../../;
 #X msg 139 38 add gui02-osc~;
-#X obj 58 130 get.output~;
 #X obj 58 90 pd-dom gui02;
 #N canvas 352 206 784 485 gui02.gop 0;
 #X msg 400 100 lalal;
@@ -13,8 +11,10 @@
 #X restore 332 36 pd gui02.gop;
 #X msg 73 274 \; pd-gui02.gop clear \; pd-gui02.gop msg 400 100 lalal
 ;
-#X connect 0 0 5 1;
+#X obj 45 456 declare -path ./ -path ../../;
+#X obj 58 130 ../../utils/get.output~;
+#X connect 0 0 3 1;
 #X connect 1 0 0 0;
-#X connect 3 0 5 1;
-#X connect 5 0 4 0;
-#X connect 5 0 4 1;
+#X connect 2 0 3 1;
+#X connect 3 0 7 0;
+#X connect 3 0 7 1;

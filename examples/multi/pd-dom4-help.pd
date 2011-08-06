@@ -27,7 +27,6 @@
 #X msg 234 313 vis \$1;
 #X obj 234 283 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X obj 26 349 ../get.output~;
 #X obj 122 457 declare -path ./ -path ../../;
 #X msg 77 94 add random-osc4~;
 #X msg 135 164 set \$1 random-osc4~;
@@ -38,14 +37,15 @@
 #X text 233 264 open abstraction at node;
 #X obj 26 309 pd-dom4 rack4;
 #X msg 234 342 reset;
-#X connect 0 0 15 4;
-#X connect 1 0 9 0;
-#X connect 2 0 15 4;
+#X obj 26 349 ../../utils/get.output~;
+#X connect 0 0 14 4;
+#X connect 1 0 8 0;
+#X connect 2 0 14 4;
 #X connect 3 0 2 0;
-#X connect 4 0 15 4;
+#X connect 4 0 14 4;
 #X connect 5 0 4 0;
-#X connect 8 0 15 4;
-#X connect 9 0 15 4;
-#X connect 15 0 6 0;
-#X connect 15 3 6 1;
-#X connect 16 0 15 4;
+#X connect 7 0 14 4;
+#X connect 8 0 14 4;
+#X connect 14 0 16 0;
+#X connect 14 3 16 1;
+#X connect 15 0 14 4;
