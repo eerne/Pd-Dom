@@ -1,4 +1,4 @@
-#N canvas 342 22 623 407 10;
+#N canvas 342 22 613 509 10;
 #X declare -path ./ -path ../../;
 #X declare -path ./ -path ../../;
 #X declare -path ./ -path ../../;
@@ -9,6 +9,7 @@
 #X declare -path ./ -path ../../;
 #X declare -path ./ -path ../../;
 #X declare -path ../ -path basic/ -path delay/;
+#X declare -path ./ -path ../../;
 #X msg 30 27 bang;
 #X obj 80 97 print;
 #X obj 80 177 print;
@@ -37,6 +38,9 @@
 #X obj 260 357 print;
 #X obj 210 327 run-delete-outside;
 #X obj 170 27 declare -path ../ -path basic/ -path delay/;
+#X msg 210 377 bang;
+#X obj 260 437 print;
+#X obj 210 407 run-delete-many;
 #X connect 0 0 14 0;
 #X connect 3 0 15 0;
 #X connect 5 0 16 0;
@@ -62,4 +66,7 @@
 #X connect 22 0 24 0;
 #X connect 24 0 26 0;
 #X connect 26 0 25 0;
-#X connect 26 0 20 0;
+#X connect 26 0 28 0;
+#X connect 28 0 30 0;
+#X connect 30 0 29 0;
+#X connect 30 0 20 0;
