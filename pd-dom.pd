@@ -521,7 +521,8 @@ symbol \$1.\$2;
 #X connect 12 0 11 0;
 #X restore 255 220 pd disconnect;
 #X obj 145 110 route subscribe connect disconnect node~ vis;
-#X text 23 20 Pd-Dom 0.6.0 - (c) by Enrique Erne \, MIT License;
+#X text 23 20 Pd-Dom 0.7.0-dev - (c) by Enrique Erne \, MIT License
+;
 #X connect 0 0 14 0;
 #X connect 1 0 8 0;
 #X connect 3 0 7 0;
