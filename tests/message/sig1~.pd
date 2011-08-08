@@ -1,7 +1,7 @@
 #N canvas 301 48 333 313 10;
-#X text 29 29 example/01.test100.pd;
-#X obj 130 124 sig~ 1;
-#X obj 56 154 pddom.to~ \$1 \$2;
-#X obj 56 94 pddom.from~ \$1 \$2;
-#X connect 1 0 2 0;
-#X connect 3 0 2 0;
+#X obj 50 64 sig~ 1;
+#X obj 26 94 pddom.to~ \$1 \$2;
+#X obj 26 34 pddom.from~ \$1 \$2;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;

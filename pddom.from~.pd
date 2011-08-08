@@ -4,7 +4,7 @@
 #X obj 234 65 loadbang;
 #X obj 234 155 s \$1;
 #X obj 234 95 f \$2;
-#X msg 47 145 rack1.node.-1;
+#X msg 47 155 message.node.-1;
 #X obj 24 185 r~ \$1.node.-1;
 #X obj 24 65 r \$1.\$2;
 #X obj 24 95 route receive~;
