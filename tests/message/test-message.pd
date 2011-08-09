@@ -1,4 +1,4 @@
-#N canvas 370 22 859 470 10;
+#N canvas 333 30 859 470 10;
 #X declare -path ./ -path ../../;
 #X obj 236 56 declare -path ./ -path ../../;
 #X obj 45 296 pd-dom message;
@@ -9,7 +9,7 @@
 #X obj 553 340 print nodes~;
 #X obj 551 109 print verbose;
 #X obj 551 79 spigot;
-#X obj 621 49 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 621 49 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 551 199 pddom.get message.nodes;
 #X obj 553 310 pddom.get message.nodes~;
@@ -17,14 +17,17 @@
 #X obj 45 246 sig~ 1.2345;
 #X msg 295 210 add sig1~;
 #X msg 295 180 add add1;
-#X obj 105 169 r message.last;
-#X obj 101 199 print;
+#X obj 45 166 r message.last;
+#X obj 45 196 print;
 #X msg 295 269 vis \$1;
 #X obj 295 239 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 1;
-#X floatatom 108 115 5 0 0 0 - - -;
-#X obj 104 145 s message.first;
+#X floatatom 45 106 5 0 0 0 - - -;
+#X obj 45 136 s message.first;
 #X obj 551 49 r message;
+#X obj 295 299 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X msg 295 329 delete \$1;
 #X connect 1 0 12 0;
 #X connect 2 0 1 1;
 #X connect 3 0 10 0;
@@ -41,3 +44,5 @@
 #X connect 19 0 18 0;
 #X connect 20 0 21 0;
 #X connect 22 0 8 0;
+#X connect 23 0 24 0;
+#X connect 24 0 1 1;
