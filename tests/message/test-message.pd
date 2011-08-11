@@ -1,33 +1,37 @@
-#N canvas 333 30 859 470 10;
+#N canvas 389 28 859 470 10;
 #X declare -path ./ -path ../../;
-#X obj 236 56 declare -path ./ -path ../../;
-#X obj 45 296 pd-dom message;
-#X msg 295 147 add bypass;
-#X msg 551 169 bang;
-#X obj 551 229 print nodes;
-#X msg 553 280 bang;
-#X obj 553 340 print nodes~;
-#X obj 551 109 print verbose;
-#X obj 551 79 spigot;
-#X obj 621 49 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 46 36 declare -path ./ -path ../../;
+#X obj 45 276 pd-dom message;
+#X msg 295 67 add bypass;
+#X msg 551 149 bang;
+#X obj 551 209 print nodes;
+#X msg 553 260 bang;
+#X obj 553 320 print nodes~;
+#X obj 551 99 print verbose;
+#X obj 551 69 spigot;
+#X obj 621 39 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 551 199 pddom.get message.nodes;
-#X obj 553 310 pddom.get message.nodes~;
-#X obj 45 346 ../../utils/get.snapshot~;
-#X obj 45 246 sig~ 1.2345;
-#X msg 295 210 add sig1~;
-#X msg 295 180 add add1;
-#X obj 45 166 r message.last;
-#X obj 45 196 print;
-#X msg 295 269 vis \$1;
-#X obj 295 239 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+#X obj 551 179 pddom.get message.nodes;
+#X obj 553 290 pddom.get message.nodes~;
+#X obj 45 326 ../../utils/get.snapshot~;
+#X obj 45 226 sig~ 1.2345;
+#X msg 295 130 add sig1~;
+#X msg 295 100 add add1;
+#X msg 295 349 vis \$1;
+#X obj 295 319 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 1;
-#X floatatom 45 106 5 0 0 0 - - -;
-#X obj 45 136 s message.first;
-#X obj 551 49 r message;
-#X obj 295 299 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+#X floatatom 45 86 5 0 0 0 - - -;
+#X obj 551 39 r message;
+#X obj 295 159 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 4;
+#X obj 45 116 s message.to;
+#X obj 45 146 r message.from;
+#X obj 45 176 print message.from;
+#X obj 295 219 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X msg 295 329 delete \$1;
+#X msg 295 249 delete \$1;
+#X msg 295 189 set \$1 add1;
+#X msg 295 279 reset;
 #X connect 1 0 12 0;
 #X connect 2 0 1 1;
 #X connect 3 0 10 0;
@@ -39,10 +43,13 @@
 #X connect 13 0 1 0;
 #X connect 14 0 1 1;
 #X connect 15 0 1 1;
-#X connect 16 0 17 0;
-#X connect 18 0 1 1;
-#X connect 19 0 18 0;
-#X connect 20 0 21 0;
-#X connect 22 0 8 0;
-#X connect 23 0 24 0;
-#X connect 24 0 1 1;
+#X connect 16 0 1 1;
+#X connect 17 0 16 0;
+#X connect 18 0 21 0;
+#X connect 19 0 8 0;
+#X connect 20 0 26 0;
+#X connect 22 0 23 0;
+#X connect 24 0 25 0;
+#X connect 25 0 1 1;
+#X connect 26 0 1 1;
+#X connect 27 0 1 1;
