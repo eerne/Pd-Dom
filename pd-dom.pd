@@ -37,7 +37,7 @@
 #X obj 114 25 r \$1.last;
 #X msg 204 26 receive~ set rack1.node.-1;
 #X obj 114 75 route receive~;
-#X msg 137 115 rack1.node.-1;
+#X msg 137 115 message.node.-1;
 #X obj 244 115 s \$1.from;
 #X connect 2 0 0 0;
 #X connect 3 0 5 0;
@@ -283,7 +283,7 @@ to. Signal processing objects have to register themself to this list.
 #X connect 10 0 11 0;
 #X connect 11 0 4 0;
 #X restore 145 280 pd subscribe~;
-#N canvas 134 271 414 211 node.first 1;
+#N canvas 12 22 414 211 node.first 1;
 #X obj 25 40 inlet~;
 #X obj 25 150 outlet~;
 #X obj 25 80 s~ \$1.node.-1;
@@ -292,7 +292,7 @@ to. Signal processing objects have to register themself to this list.
 #X obj 205 150 s;
 #X msg 285 110 set \$1;
 #X obj 205 40 r \$1.to;
-#X msg 285 150;
+#X msg 285 150 message.0;
 #X connect 0 0 2 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 1;
@@ -466,7 +466,8 @@ to. Signal processing objects have to register themself to this list.
 #X obj 174 255 list trim;
 #X msg 244 325 node~ replace \$1 \$2;
 #X msg 324 145 list \$1 .;
-#X msg 24 325 connect \$1 \$2 \, connect~ \$1 \$2;
+#X msg 84 385 connect \$1 \$2 \, connect~ \$1 \$2;
+#X msg 24 325 connect~ \$1 \$2;
 #X connect 0 0 3 0;
 #X connect 2 0 6 0;
 #X connect 3 0 4 0;
@@ -475,13 +476,13 @@ to. Signal processing objects have to register themself to this list.
 #X connect 4 1 5 0;
 #X connect 5 0 6 1;
 #X connect 6 0 7 0;
-#X connect 7 0 12 0;
+#X connect 7 0 13 0;
 #X connect 7 1 9 0;
 #X connect 8 1 10 0;
 #X connect 9 0 8 0;
 #X connect 10 0 1 0;
 #X connect 11 0 10 0;
-#X connect 12 0 1 0;
+#X connect 13 0 1 0;
 #X restore 275 220 pd disconnect~;
 #X obj 145 110 route subscribe~ connect~ disconnect~ node~ vis;
 #N canvas 59 22 496 339 hooks 0;
