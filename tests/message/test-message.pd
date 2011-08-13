@@ -9,7 +9,7 @@
 #X obj 553 320 print nodes~;
 #X obj 551 99 print verbose;
 #X obj 551 69 spigot;
-#X obj 621 39 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 621 39 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 551 179 pddom.get message.nodes;
 #X obj 553 290 pddom.get message.nodes~;
@@ -19,7 +19,7 @@
 #X msg 295 100 add add1;
 #X msg 295 349 vis \$1;
 #X obj 295 319 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 0;
 #X floatatom 45 86 5 0 0 0 - - -;
 #X obj 551 39 r message;
 #X obj 295 159 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
