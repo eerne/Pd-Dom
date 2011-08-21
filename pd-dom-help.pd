@@ -1,5 +1,5 @@
 #N canvas 417 28 758 551 10;
-#X declare -path ./ -path tests/basic/;
+#X declare -path ./ -path tests/abstractions/;
 #N canvas 770 22 427 507 more 0;
 #X obj 33 430 outlet;
 #X msg 301 370 clone 1 3;
@@ -42,7 +42,6 @@
 -1 -1 0;
 #X msg 177 190 add random-osc~;
 #X msg 176 330 set \$1 random-osc~;
-#X obj 177 20 declare -path ./ -path tests/basic/;
 #X text 23 60 Pd-Dom is a wrapper around the unofficial Pd dynamic
 patching methods. It simplifies API to create and chain abstractions.
 Tree structures can be build with multiple nested Pd-Dom instances.
@@ -74,19 +73,20 @@ methods;
 #X msg 177 220 chain random-osc~ random-osc~ random-osc~;
 #X text 23 20 Pd-Dom 0.7.0-dev;
 #X obj 26 379 utils/get.output~;
-#X connect 0 0 20 0;
-#X connect 1 0 18 0;
+#X obj 177 20 declare -path ./ -path tests/abstractions/;
+#X connect 0 0 19 0;
+#X connect 1 0 17 0;
 #X connect 2 0 4 1;
-#X connect 3 0 19 0;
-#X connect 4 0 25 0;
-#X connect 4 0 25 1;
-#X connect 5 0 20 0;
-#X connect 6 0 22 0;
+#X connect 3 0 18 0;
+#X connect 4 0 24 0;
+#X connect 4 0 24 1;
+#X connect 5 0 19 0;
+#X connect 6 0 21 0;
 #X connect 7 0 4 1;
 #X connect 8 0 4 1;
-#X connect 14 0 4 1;
-#X connect 17 0 4 1;
-#X connect 18 0 8 0;
-#X connect 19 0 2 0;
-#X connect 22 0 5 0;
-#X connect 23 0 4 1;
+#X connect 13 0 4 1;
+#X connect 16 0 4 1;
+#X connect 17 0 8 0;
+#X connect 18 0 2 0;
+#X connect 21 0 5 0;
+#X connect 22 0 4 1;

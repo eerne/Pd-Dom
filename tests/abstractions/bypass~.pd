@@ -3,3 +3,4 @@
 #X obj 56 154 pddom.to~ \$1 \$2;
 #X obj 56 94 pddom.from~ \$1 \$2;
 #X connect 2 0 1 0;
+#X connect 2 1 1 1;

@@ -1,0 +1,35 @@
+#N canvas 505 22 736 384 10;
+#X obj 139 215 +;
+#X obj 29 65 t a a;
+#X obj 69 95 list prepend prepend try:;
+#X obj 29 165 get.time;
+#X obj 29 255 test.equal \$0;
+#X obj 29 25 r \$0.in;
+#X obj 159 185 r \$0.setup;
+#X obj 69 125 s \$0.log;
+#X obj 319 85 f \$0;
+#X msg 319 135 \; \$1.setup 1 \; \$1.print test [+ 1] \; \$1.expect
+2 \; \$1.in 1 \; \$1.expect 0 \; \$1.in -1 \; \$1.expect 100000 \;
+\$1.in 99999 \; \$1.expect 4 \; \$1.in 2 2 \; \$1.setup -0.12 \; \$1.print
+test [+ -0.12] \; \$1.expect 9.81 \; \$1.in 9.93;
+#X obj 339 55 r test;
+#X msg 319 25 bang;
+#X msg 499 135;
+#X obj 499 25 r test.equal;
+#X obj 499 95 f \$0;
+#X obj 499 65 route bang;
+#X connect 0 0 4 1;
+#X connect 1 0 3 0;
+#X connect 1 1 2 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 3 1 0 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 1;
+#X connect 8 0 9 0;
+#X connect 10 0 8 0;
+#X connect 11 0 8 0;
+#X connect 13 0 15 0;
+#X connect 14 0 12 0;
+#X connect 15 0 14 0;
+#X connect 15 1 12 0;

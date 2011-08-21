@@ -1,0 +1,45 @@
+#N canvas 505 22 705 467 10;
+#X declare -path ../abstractions/ -path ../../;
+#X obj 30 107 t a a;
+#X obj 70 137 list prepend prepend try:;
+#X obj 30 67 r \$0.in;
+#X obj 70 167 s \$0.log;
+#X obj 380 127 f \$0;
+#X obj 400 97 r test;
+#X msg 380 67 bang;
+#X obj 30 27 declare -path ../abstractions/ -path ../../;
+#X obj 30 207 utils/get.time;
+#X obj 30 397 utils/test.equal \$0;
+#X obj 150 327 pd-dom message-simple;
+#X msg 290 297 set 0 add1;
+#X obj 150 257 t a b;
+#X obj 150 297 s message-simple.to;
+#X obj 150 367 r message-simple.from;
+#N canvas 0 22 450 300 incoming 0;
+#X msg 30 137;
+#X obj 30 97 f \$0;
+#X obj 30 67 route bang;
+#X obj 30 27 r test.message.simple;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 1 0 0;
+#X connect 3 0 2 0;
+#X restore 380 27 pd incoming;
+#X msg 380 177 \; pd dsp 0 \; \$1.print test [set 0 add1(-[pd-dom]
+DSP off \; \$1.expect 2 \; \$1.in 1 \; \$1.expect 0 \; \$1.in -1 \;
+\$1.expect 100000 \; \$1.in 99999 \; pd dsp 1 \; \$1.print test [set
+0 add1(-[pd-dom] DSP on \; \$1.expect 2 \; \$1.in 1 \; \$1.expect 0
+\; \$1.in -1 \; \$1.expect 100000 \; \$1.in 99999 \;;
+#X connect 0 0 8 0;
+#X connect 0 1 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 4 0 16 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 8 0 9 0;
+#X connect 8 1 12 0;
+#X connect 11 0 10 1;
+#X connect 12 0 13 0;
+#X connect 12 1 11 0;
+#X connect 14 0 9 1;

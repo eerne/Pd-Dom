@@ -1,0 +1,14 @@
+#N canvas 277 52 450 300 10;
+#X obj 26 31 inlet;
+#X obj 26 71 samplerate~;
+#X obj 26 131 /;
+#X obj 26 191 delay;
+#X obj 26 231 outlet;
+#X obj 26 161 * 64;
+#X msg 26 103 1000 \$1;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 6 0 2 0;

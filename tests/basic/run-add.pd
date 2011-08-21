@@ -1,4 +1,4 @@
-#N canvas 261 22 513 670 10;
+#N canvas 188 22 513 670 10;
 #X declare -path ./ -path ../../;
 #X msg 250 237 add sig1~;
 #X obj 170 27 declare -path ./ -path ../../;
@@ -101,7 +101,7 @@ block read the set sig~value.;
 #X obj 130 277 pd-dom add-sig1;
 #X msg 30 587 \$1: add abstraction sig1~ (DSP off). got \$2 expect
 >= 1 in \$3 ms;
-#X obj 30 127 ../../utils/get.time;
+#X obj 30 127 utils/get.time;
 #X connect 0 0 20 1;
 #X connect 3 0 15 0;
 #X connect 4 0 6 0;
