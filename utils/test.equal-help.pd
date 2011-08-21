@@ -15,11 +15,11 @@
 #X obj 499 95 f \$0;
 #X obj 499 65 route bang;
 #X msg 29 235 (processed in: \$1 ms);
-#X msg 319 135 \; \$1.setup 1 \; \$1.print _ test [+ 1] \; \$1.expect
+#X msg 319 135 \; \$1.setup 1 \; \$1.print __ test [+ 1] \; \$1.expect
 2 \; \$1.in 1 \; \$1.expect 0 \; \$1.in -1 \; \$1.expect 100000 \;
-\$1.in 99999 \; \$1.expect 4 \; \$1.in 2 2 \; \$1.print _ expect to
-FAIL: \; \$1.expect 123 \; \$1.in -10 \; \$1.setup -0.12 \; \$1.print
-test [+ -0.12] \; \$1.expect 9.81 \; \$1.in 9.93;
+\$1.in 99999 \; \$1.expect 4 \; \$1.in 2 2 \; \$1.print __ should FAIL:
+\; \$1.expect 123 \; \$1.in -10 \; \$1.setup -0.12 \; \$1.print test
+[+ -0.12] \; \$1.expect 9.81 \; \$1.in 9.93;
 #X connect 0 0 4 1;
 #X connect 1 0 3 0;
 #X connect 1 1 2 0;
