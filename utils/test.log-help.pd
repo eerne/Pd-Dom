@@ -1,14 +1,20 @@
-#N canvas 535 22 450 300 10;
-#X obj 38 150 test.log;
-#X msg 78 50 0;
-#X msg 38 50 1;
-#X msg 128 50 anything;
-#X msg 128 120 append other data;
-#X msg 128 90 prepend some info;
-#X msg 128 150 bang;
+#N canvas 647 77 450 300 10;
+#X obj 38 200 test.log;
+#X msg 98 70 0;
+#X msg 58 70 1;
+#X msg 38 40 anything;
+#X msg 158 170 reset;
+#X msg 158 70 prepend foo-\$1;
+#X obj 158 40 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 3;
+#X obj 158 110 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 5;
+#X msg 158 140 append bar-\$1;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
 #X connect 4 0 0 1;
 #X connect 5 0 0 1;
-#X connect 6 0 0 1;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 1;
