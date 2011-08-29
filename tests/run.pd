@@ -8,14 +8,12 @@
 #X declare -path ./ -path ../../;
 #X declare -path ./ -path ../../;
 #X declare -path ./ -path ../../;
-#X declare -path ./ -path ../../;
 #X declare -path ../abstractions/ -path ../../;
 #X declare -path ../abstractions/ -path ../../;
 #X declare -path ../ -path basic/ -path abstractions/;
 #X declare -path ../abstractions/ -path ../../;
 #X obj 210 97 run-delete;
 #X obj 210 127 run-delete-dsp1;
-#X obj 30 147 run-add-dsp1;
 #X obj 30 177 run-set;
 #X obj 30 207 run-set-dsp1;
 #X obj 210 157 run-delete2;
