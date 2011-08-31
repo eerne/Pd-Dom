@@ -44,10 +44,11 @@
 #X obj 249 425 s \$1.log;
 #X obj 249 255 r \$1.setup;
 #X obj 59 385 t a b;
-#X obj 119 145 s \$1.log;
+#X obj 119 175 s \$1.log;
 #X obj 119 115 r \$0.reset;
 #X obj 249 305 s \$0.reset;
 #X obj 249 115 list prepend append;
+#X msg 119 145 reset;
 #X connect 0 0 8 0;
 #X connect 1 0 0 0;
 #X connect 1 1 19 0;
@@ -66,5 +67,6 @@
 #X connect 15 0 4 0;
 #X connect 15 1 4 1;
 #X connect 17 0 0 1;
-#X connect 17 0 16 0;
+#X connect 17 0 20 0;
 #X connect 19 0 7 0;
+#X connect 20 0 16 0;
