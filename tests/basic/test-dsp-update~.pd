@@ -1,12 +1,12 @@
 #N canvas 542 22 457 466 10;
-#X declare -path ./ -path ../../;
-#X msg 34 34 \; pd dsp 1;
-#X msg 34 74 \; pd dsp 0;
-#X msg 248 187 vis \$1;
-#X obj 248 157 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+#X declare -path ../abstractions/ -path ../../;
+#X msg 46 76 \; pd dsp 1;
+#X msg 46 116 \; pd dsp 0;
+#X msg 260 229 vis \$1;
+#X obj 260 199 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X obj 34 224 pd-dom dsp-update~;
-#X msg 134 84 add random-osc~;
+#X obj 46 266 pd-dom dsp-update~;
+#X msg 146 126 add random-osc~;
 #N canvas 77 22 433 288 dsp-tree-update-workaround 0;
 #X obj 24 25 inlet;
 #X obj 64 105 outlet;
@@ -19,18 +19,18 @@
 #X connect 2 0 4 0;
 #X connect 2 1 1 0;
 #X connect 4 0 5 0;
-#X restore 134 114 pd dsp-tree-update-workaround;
-#X obj 34 138 loadbang;
-#X msg 34 166 dsp_ disable;
-#X obj 34 414 declare -path ./ -path ../../;
-#X obj 136 34 ../../utils/get.time;
-#X obj 34 264 ../../utils/get.output~;
+#X restore 146 156 pd dsp-tree-update-workaround;
+#X obj 46 180 loadbang;
+#X msg 46 208 dsp_ disable;
+#X obj 148 76 ../../utils/get.time;
+#X obj 46 306 ../../utils/get.output~;
+#X obj 46 36 declare -path ../abstractions/ -path ../../;
 #X connect 2 0 4 1;
 #X connect 3 0 2 0;
-#X connect 4 0 11 0;
-#X connect 4 0 11 1;
+#X connect 4 0 10 0;
+#X connect 4 0 10 1;
 #X connect 5 0 6 0;
 #X connect 6 0 4 1;
 #X connect 7 0 8 0;
 #X connect 8 0 4 1;
-#X connect 10 0 5 0;
+#X connect 9 0 5 0;
