@@ -1,0 +1,99 @@
+#N canvas 215 22 858 686 10;
+#X declare -path ../abstractions/ -path ../../;
+#N canvas 26 365 384 408 pass 0;
+#X obj 30 27 inlet;
+#X msg 30 67 \; pd dsp \$2 \; \$1.print __ pd dsp \$2 \; \$1.print
+__ [set 0 add1( then test -4 \; \$1.expect -3 \; \$1.set set 0 add1
+\; \$1.test -4 \; \$1.expect 0 \; \$1.try -1 \; \$1.expect 1001 \;
+\$1.try 1000 \; \$1.expect -0.5 \; \$1.try -1.5 \; \$1.print __ [set
+5 add1( then test 1 \; \$1.expect 3 \; \$1.set set 5 add1 \; \$1.test
+1 \; pd dsp 0 \; \$1.reset bang;
+#X connect 0 0 1 0;
+#X restore 595 11 pd pass;
+#N canvas 372 22 384 408 fail 0;
+#X obj 30 27 inlet;
+#X msg 30 67 \; pd dsp \$2 \; \$1.print __ pd dsp \$2 \; \$1.print
+__ should FAIL [set 0 add1( then test -1 \; \$1.expect -1 \; \$1.set
+set 0 add1 \; \$1.test -1 \; \$1.expect 0.999 \; \$1.try -0.999 \;
+pd dsp 0 \; \$1.reset bang;
+#X connect 0 0 1 0;
+#X restore 685 11 pd fail;
+#X obj 30 27 declare -path ../abstractions/ -path ../../;
+#X obj 30 157 utils/get.time;
+#X obj 200 637 utils/test.log;
+#X obj 480 577 r \$0.log;
+#X obj 200 288 s \$0.log;
+#X obj 200 457 t a a;
+#X obj 560 577 list prepend got:;
+#X obj 215 507 r \$0.expect;
+#X obj 200 168 list prepend prepend try:;
+#X obj 499 57 inlet;
+#X msg 417 577 reset;
+#X obj 479 287 outlet;
+#X obj 215 537 t a a b;
+#X msg 479 27 bang;
+#X obj 589 167 print pd_dsp;
+#X obj 200 577 ==;
+#X obj 247 577 list prepend expect: ==;
+#X obj 30 67 r \$0.inlet;
+#X obj 479 137 t b a a;
+#X obj 539 197 list prepend \$0;
+#X msg 30 237 1 (processed in: \$1 ms);
+#X obj 200 337 r \$0.try;
+#X obj 200 367 t a a;
+#X obj 687 577 list prepend try:;
+#X msg 404 260 reset;
+#X obj 539 227 t a a;
+#X obj 280 287 pd-dom with-signal;
+#X obj 200 397 s with-signal.to;
+#X obj 200 427 r with-signal.from;
+#X obj 30 107 t a a b;
+#X msg 370 168 reset;
+#X msg 689 227 \; pd dsp \$2 \; \$1.inlet reset \; \$1.inlet set 1
+add1 \; \$1.expect 1 \; \$1.try 0 \; \$1.inlet set 0 sig1~ \; \$1.expect
+100 \; \$1.try 99;
+#X msg 539 267 \; \$1.inlet reset \; \$1.inlet set 0 add1 \; \$1.expect
+0 \; \$1.try -1 \; \$1.inlet set 1 sig1~ \; \$1.expect -2 \; \$1.try
+-3 \; \$1.inlet set 2 add1 \; \$1.inlet set 3 sig1~ \; \$1.expect -2
+\; \$1.try -4;
+#X obj 384 200 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X msg 384 230 vis \$1;
+#X msg 479 97 1 \, 0;
+#X connect 3 0 22 0;
+#X connect 3 1 28 1;
+#X connect 5 0 4 1;
+#X connect 7 0 17 0;
+#X connect 7 1 8 0;
+#X connect 8 0 4 1;
+#X connect 9 0 14 0;
+#X connect 10 0 6 0;
+#X connect 11 0 37 0;
+#X connect 12 0 4 1;
+#X connect 14 0 17 1;
+#X connect 14 1 18 0;
+#X connect 14 2 12 0;
+#X connect 15 0 37 0;
+#X connect 17 0 4 0;
+#X connect 18 0 4 1;
+#X connect 19 0 31 0;
+#X connect 20 0 13 0;
+#X connect 20 1 21 0;
+#X connect 20 2 16 0;
+#X connect 21 0 27 0;
+#X connect 22 0 4 0;
+#X connect 23 0 24 0;
+#X connect 24 0 29 0;
+#X connect 24 1 25 0;
+#X connect 25 0 4 1;
+#X connect 26 0 28 1;
+#X connect 27 0 34 0;
+#X connect 27 1 33 0;
+#X connect 30 0 7 0;
+#X connect 31 0 3 0;
+#X connect 31 1 10 0;
+#X connect 31 2 32 0;
+#X connect 32 0 6 0;
+#X connect 35 0 36 0;
+#X connect 36 0 28 1;
+#X connect 37 0 20 0;
