@@ -8,7 +8,7 @@
 #X obj 553 320 print nodes~;
 #X obj 551 99 print verbose;
 #X obj 551 69 spigot;
-#X obj 621 39 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 621 39 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 551 179 pddom.get message.nodes;
 #X obj 553 290 pddom.get message.nodes~;
@@ -31,8 +31,10 @@
 #X msg 295 249 delete \$1;
 #X msg 295 189 set \$1 add1;
 #X msg 295 279 reset;
-#X msg 555 364 \; pd-node.first vis 1 \; pd-pddom.to.pd vis 1;
 #X obj 46 36 declare -path ../abstractions/ -path ../../;
+#X msg 85 86 1;
+#X msg 555 364 \; pd-node.first vis 1 \; pd-pddom.to.pd vis 1 \; pd-pddom.to~.pd
+vis 1;
 #X connect 0 0 11 0;
 #X connect 1 0 0 1;
 #X connect 2 0 9 0;
@@ -54,3 +56,4 @@
 #X connect 24 0 0 1;
 #X connect 25 0 0 1;
 #X connect 26 0 0 1;
+#X connect 28 0 20 0;
