@@ -546,7 +546,8 @@ to. Signal processing objects have to register themself to this list.
 #X connect 5 2 2 0;
 #X connect 5 3 1 0;
 #X restore 448 159 pd hooks;
-#X text 23 20 Pd-Dom 0.7.1 - (c) by Enrique Erne \, MIT License;
+#X text 23 20 Pd-Dom 0.8.0-dev - (c) by Enrique Erne \, MIT License
+;
 #X connect 0 0 13 0;
 #X connect 1 0 10 0;
 #X connect 3 0 7 0;
