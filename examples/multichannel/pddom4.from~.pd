@@ -20,7 +20,7 @@
 #X obj 324 255 r~ \$1.node.-1.D;
 #X obj 24 65 r \$1.\$2;
 #X obj 24 95 route receive~;
-#X msg 224 125 subscribe \$1;
+#X msg 224 125 subscribe~ \$1;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
 #X connect 6 0 8 0;
